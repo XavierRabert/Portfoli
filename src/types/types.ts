@@ -6,3 +6,10 @@ export type projectDetails = {
   textLink?: string;
   showProject: boolean;
 };
+
+export type experienceDetails = {
+  name: string;
+  company: string;
+  years: string;
+  text: string[];
+};

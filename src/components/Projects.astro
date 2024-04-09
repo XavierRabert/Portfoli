@@ -1,7 +1,7 @@
 ---
 import { projects } from "@/data/info.json";
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import type { projectDetails } from "@/types/projects";
+import type { projectDetails } from "@/types/types";
 
 const porjectsToShow: projectDetails[] = projects.filter(
   (project: projectDetails) => project.showProject
@@ -9,8 +9,8 @@ const porjectsToShow: projectDetails[] = projects.filter(
 ---
 
 <section id="projects">
-  <h2 class="text-2xl font-bold text-x-blue">Projectes</h2>
-  <div class="grid md:grid-cols-2 gap-4 mt-6">
+  <h2 class="text-3xl font-bold text-x-blue mb-6">Projectes</h2>
+  <div class="grid md:grid-cols-2 gap-4 ">
     {
       porjectsToShow.map(
         (project) => project.showProject && <ProjectDetail project={project} />
@@ -18,3 +18,4 @@ const porjectsToShow: projectDetails[] = projects.filter(
     }
   </div>
 </section>
+@/types/types

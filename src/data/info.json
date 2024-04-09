@@ -19,6 +19,40 @@
       }
     ]
   },
+  "experience": [
+    {
+      "name": "Front-end",
+      "company": "Eurofirms",
+      "years": "Maig 2023 - Actualitat",
+      "text": [
+        "Desenvolupament de la plataforma CornerJob utilitzant React.",
+        "Control de versions amb Git i testing unitari amb Jest",
+        "Metodología Agile i Azure DevOps."
+      ]
+    },
+    {
+      "name": "Programador PLC",
+      "company": "Refrica",
+      "years": "14 anys",
+      "text": [
+        "Disseny i programació de software.",
+        "Manteniment i adaptació d'aplicacions existents.",
+        "Comunicacions i connexions remotes.",
+        "Programació d'equips de control elèctric industrial."
+      ]
+    },
+
+    {
+      "name": "Programador",
+      "company": "PH Systems",
+      "years": "3 anys",
+      "text": [
+        "Disseny i programació de software per a gestió d'empreses.",
+        "Administrador de bases de dades ORACLE.",
+        "Teleassistència."
+      ]
+    }
+  ],
   "projects": [
     {
       "imgSrc": "/projecte1.webp",
