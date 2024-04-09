@@ -1,0 +1,35 @@
+---
+import type { projectDetails } from "@/types/projects.ts";
+
+interface Props {
+  project: projectDetails;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="grid gap-4">
+  <a href={project.webLink} target="_blank">
+    <div class="relative max-w-sm overflow-hidden bg-cover bg-no-repeat m-auto">
+      <img src={project.imgSrc} alt={project.imgName} class="rounded-xl" />
+      <div
+        class="absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-xl overflow-hidden bg-x-dark-grey bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-50"
+      >
+      </div>
+    </div>
+  </a>
+  <p>
+    {project.text}
+    {
+      project.textLink && (
+        <a
+          href=`https://${project.textLink}`
+          target="_blank"
+          class="text-x-blue"
+        >
+          {project.textLink}
+        </a>
+      )
+    }
+  </p>
+</div>

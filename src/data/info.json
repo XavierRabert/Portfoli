@@ -1,0 +1,52 @@
+{
+  "main": {
+    "imgSrc": "/Xavier.webp",
+    "imgName": "Xavier Rabert",
+    "title": " Hola sóc en Xavier",
+    "text": " Apassionat de la programació des de l'any 2000 i actualment Front-End en constant creixament.",
+    "social": [
+      {
+        "icon": "github",
+        "link": "https://github.com/XavierRabert"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/in/xavierrabert/"
+      },
+      {
+        "icon": "gmail",
+        "link": "mailto:xrabert@gmail.com"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "imgSrc": "/projecte1.webp",
+      "imgName": "Movies DB",
+      "webLink": "https://landing-react-movies.netlify.app/",
+      "text": "Projecte d'apranentatge i iniciació a React, consumint l'API de",
+      "textLink": "www.themoviedb.org",
+      "showProject": true
+    },
+    {
+      "imgSrc": "/projecte2.webp",
+      "imgName": "Marvel",
+      "webLink": "https://landing-react-movies.netlify.app/",
+      "text": "Projecte d'apranentatge i iniciació a Angular, consumint l'API de",
+      "textLink": "www.marvel.com",
+      "showProject": true
+    },
+    {
+      "imgSrc": "/projecte2.webp",
+      "imgName": "Forms",
+      "webLink": "https://landing-react-movies.netlify.app/",
+      "text": "Projecte de control i validació de formularis en React, React Hook Forms i Yup consumint una API pròpia en Node JS i Express",
+      "showProject": false
+    }
+  ],
+  "about": [
+    "Hola a tothom, sóc en Xavier Rabert, un apassionat desenvolupador de software en constant creixament professional i personal.",
+    "Vaig iniciar la meva formació l'any 2000 i molt aviat vaig descobrir la meva passió per el desenvolupament de software.",
+    "Després de 15 anys en el sector industrial creant aplicacións en entorns de programació per a PLC vaig decidir continuar creixent encara més, i és per això, que ara sóc desenvolupador Front-end en una multinacional."
+  ]
+}
