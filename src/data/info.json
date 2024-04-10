@@ -3,7 +3,7 @@
     "imgSrc": "/Xavier.webp",
     "imgName": "Xavier Rabert",
     "title": " Hola sóc en Xavier",
-    "text": " Apassionat de la programació des de l'any 2000 i actualment Front-End en constant creixament.",
+    "text": " Apassionat de la programació des de l'any 2000 i actualment Front-End en constant creixement.",
     "social": [
       {
         "icon": "github",
@@ -65,7 +65,7 @@
     {
       "imgSrc": "/projecte2.webp",
       "imgName": "Marvel",
-      "webLink": "https://landing-react-movies.netlify.app/",
+      "webLink": "https://landing-angular-marvel.netlify.app/",
       "text": "Projecte d'apranentatge i iniciació a Angular, consumint l'API de",
       "textLink": "www.marvel.com",
       "showProject": true

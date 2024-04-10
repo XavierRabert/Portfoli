@@ -10,7 +10,7 @@ const porjectsToShow: projectDetails[] = projects.filter(
 
 <section id="projects">
   <h2 class="text-3xl font-bold text-x-blue mb-6">Projectes</h2>
-  <div class="grid md:grid-cols-2 gap-4 ">
+  <div class="grid md:grid-cols-2 gap-4">
     {
       porjectsToShow.map(
         (project) => project.showProject && <ProjectDetail project={project} />
@@ -18,4 +18,3 @@ const porjectsToShow: projectDetails[] = projects.filter(
     }
   </div>
 </section>
-@/types/types
