@@ -1,8 +1,16 @@
 ---
-import { about } from "@/data/info.json";
+import { about } from "@/data/ca.json";
+import H2 from "./common/H2.astro";
+import Photo from "./common/Photo.astro";
 ---
 
 <section id="about">
-  <h2 class="text-3xl font-bold text-x-blue mb-6">Qui sóc?</h2>
-  {about.map((item) => <p class="pt-1">{item}</p>)}
+  <div class="grid grid-cols-3">
+    <div class="col-span-2">
+      <H2>Qui sóc?</H2>
+      {about.text.map((item) => <p class="pt-1">{item}</p>)}
+    </div>
+    <!-- <img src={about.imgSrc} alt={about.imgName} class="z-10 w-60 ml-8" /> -->
+    <Photo imgSrc={about.imgSrc} imgName={about.imgName} />
+  </div>
 </section>

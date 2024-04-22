@@ -18,18 +18,5 @@ const { project } = Astro.props;
       </div>
     </div>
   </a>
-  <p>
-    {project.text}
-    {
-      project.textLink && (
-        <a
-          href=`https://${project.textLink}`
-          target="_blank"
-          class="text-x-blue"
-        >
-          {project.textLink}
-        </a>
-      )
-    }
-  </p>
+  <p set:html={project.text} />
 </div>

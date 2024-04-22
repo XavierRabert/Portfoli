@@ -1,27 +1,23 @@
 ---
-import { main } from "@/data/info.json";
+import { main } from "@/data/ca.json";
 import Icon from "@/components/Icon.astro";
+import Social from "./common/Social.astro";
+import Photo from "./common/Photo.astro";
 ---
 
 <section id="main container">
-  <div class="grid lg:grid-cols-2">
-    <div class="p-10">
-      <img src={main.imgSrc} alt={main.imgName} />
-    </div>
+  <div class="grid lg:grid-cols-2 mt-28">
+    <Photo
+      imgSrc={main.imgSrc}
+      imgName={main.imgName}
+      customStyles="right-20"
+    />
+
     <div class="flex flex-col justify-center space-y-4">
-      <h1 class="text-4xl font-sans mb-4">{main.title}</h1>
+      <h1 class="text-4xl mb-4">{main.title}</h1>
       <p class="text-xl">
         {main.text}
       </p>
-      <div class="flex space-x-4 my-5">
-        {
-          main.social.map((social) => (
-            <a href={social.link} target="_blank">
-              <Icon name={social.icon} size="32" customClass="fill-x-blue" />
-            </a>
-          ))
-        }
-      </div>
     </div>
   </div>
 </section>

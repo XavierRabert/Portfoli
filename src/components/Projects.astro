@@ -1,7 +1,8 @@
 ---
-import { projects } from "@/data/info.json";
+import { projects } from "@/data/ca.json";
 import ProjectDetail from "@/components/ProjectDetail.astro";
 import type { projectDetails } from "@/types/types";
+import H2 from "./common/H2.astro";
 
 const porjectsToShow: projectDetails[] = projects.filter(
   (project: projectDetails) => project.showProject
@@ -9,7 +10,7 @@ const porjectsToShow: projectDetails[] = projects.filter(
 ---
 
 <section id="projects">
-  <h2 class="text-3xl font-bold text-x-blue mb-6">Projectes</h2>
+  <H2>Projectes</H2>
   <div class="grid md:grid-cols-2 gap-4">
     {
       porjectsToShow.map(

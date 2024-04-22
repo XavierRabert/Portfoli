@@ -1,11 +1,12 @@
 ---
-import { experience } from "@/data/info.json";
+import { experience2 } from "@/data/ca.json";
 import ExperienceDetail from "./ExperienceDetail.astro";
+import H2 from "./common/H2.astro";
 ---
 
 <section id="skills">
-  <h2 class="text-3xl font-bold text-x-blue mb-6">Experiència</h2>
+  <H2> Experiència </H2>
   <div>
-    {experience.map((exp) => <ExperienceDetail experience={exp} />)}
+    {experience2.map((exp) => <ExperienceDetail experience={exp} />)}
   </div>
 </section>

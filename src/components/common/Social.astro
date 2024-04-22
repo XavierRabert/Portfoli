@@ -1,0 +1,14 @@
+---
+import { main } from "@/data/ca.json";
+import Icon from "@/components/Icon.astro";
+---
+
+<div class="flex space-x-4">
+  {
+    main.social.map((social) => (
+      <a href={social.link} target="_blank">
+        <Icon name={social.icon} size="24" customClass="fill-x-grey" />
+      </a>
+    ))
+  }
+</div>

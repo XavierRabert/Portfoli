@@ -1,0 +1,121 @@
+{
+  "main": {
+    "imgSrc": "/Xavier.png",
+    "imgName": "Xavier Rabert",
+    "title": " Hola, sóc en Xavier",
+    "text": "Creant solucions  de software des de l’any 2000. Actualment, sóc desenvolupador Front-End en constant evolució.",
+    "card": {
+      "title": "Front-End Developer",
+      "text": "Creant solucions  de software des de l’any 2000."
+    },
+    "social": [
+      {
+        "icon": "github",
+        "link": "https://github.com/XavierRabert"
+      },
+      {
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/in/xavierrabert/"
+      },
+      {
+        "icon": "gmail",
+        "link": "mailto:xrabert@gmail.com"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "name": "Front-end",
+      "company": "Eurofirms",
+      "years": "Maig 2023 - Actualitat",
+      "text": [
+        "Desenvolupament de la plataforma CornerJob utilitzant React.",
+        "Control de versions amb Git i testing unitari amb Jest",
+        "Metodología Agile i Azure DevOps."
+      ]
+    },
+    {
+      "name": "Programador PLC",
+      "company": "Refrica",
+      "years": "14 anys",
+      "text": [
+        "Disseny i programació de software.",
+        "Manteniment i adaptació d'aplicacions existents.",
+        "Comunicacions i connexions remotes.",
+        "Programació d'equips de control elèctric industrial."
+      ]
+    },
+
+    {
+      "name": "Programador",
+      "company": "PH Systems",
+      "years": "3 anys",
+      "text": [
+        "Disseny i programació de software per a gestió d'empreses.",
+        "Administrador de bases de dades ORACLE.",
+        "Teleassistència."
+      ]
+    }
+  ],
+  "experience2": [
+    {
+      "name": "Front-end",
+      "text": [
+        "Desenvolupament de la plataforma <a href='http://www.cornerjob.com' target='_blank' class='text-x-blue'>CornerJob</a> en React.",
+        "Desenvolupament d'un nou portal tecnològic en Angular.",
+        "Control de versions amb Git i testing unitari amb Jest.",
+        "Metodología Agile i Azure DevOps."
+      ]
+    },
+    {
+      "name": "Programador",
+      "text": [
+        "Disseny i programació de software per a gestió d'empreses.",
+        "Administrador de bases de dades ORACLE.",
+        "Consultes SQL per a extracció de dades i llistats.",
+        "Desenvolupament d'una aplicació mòbil en Visual Basic .NET"
+      ]
+    },
+    {
+      "name": "Programador PLC",
+      "text": [
+        "Disseny i programació de software PLC industrial.",
+        "Manteniment i adaptació d'aplicacions existents.",
+        "Comunicacions i connexions remotes.",
+        "Programació d'equips de control elèctric industrial."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "imgSrc": "/projecte1.webp",
+      "imgName": "Movies DB",
+      "webLink": "https://landing-react-movies.netlify.app/",
+      "text": "Projecte d'aprenentatge i iniciació a React, consumint l'API de <a href='http://www.themoviedb.org' target='_blank' class='text-x-blue'>www.themoviedb.org</a>",
+      "showProject": true
+    },
+    {
+      "imgSrc": "/projecte2.webp",
+      "imgName": "Marvel",
+      "webLink": "https://landing-angular-marvel.netlify.app/",
+      "text": "Projecte d'aprenentatge i iniciació a Angular, consumint l'API de <a href='http://www.marvel.com' target='_blank' class='text-x-blue'>www.marvel.com</a>",
+      "showProject": true
+    },
+    {
+      "imgSrc": "/projecte2.webp",
+      "imgName": "Forms",
+      "webLink": "https://landing-react-movies.netlify.app/",
+      "text": "Projecte de control i validació de formularis en Next JS, React Hook Forms i Yup consumint una API pròpia en Node JS i Express",
+      "showProject": false
+    }
+  ],
+  "about": {
+    "imgSrc": "/Xavier.png",
+    "imgName": "Xavier Rabert",
+    "text": [
+      "Després de 15 anys com a programador en el sector industrial, vaig decidir fer un canvi professional que em permetés tornar als orígens; formant-me de nou com a desenvolupador web.",
+      "El dinamisme de JavaScript i la versatilitat dels frameworks fan que cada projecte sigui un camp pràcticament infinit de possibilitats que cal desgranar per trobar la millor solució per assolir els objectius.",
+      "L’anàlisi i la comprensió dels requeriments son el meu punt fort per tal de poder crear un programa sòlid i de qualitat."
+    ]
+  }
+}

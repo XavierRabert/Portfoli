@@ -9,7 +9,5 @@ export type projectDetails = {
 
 export type experienceDetails = {
   name: string;
-  company: string;
-  years: string;
   text: string[];
 };
