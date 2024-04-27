@@ -1,16 +1,16 @@
 ---
-import { projects } from "@/data/ca.json";
+import { projects } from "@/data/es.json";
 import ProjectDetail from "@/components/ProjectDetail.astro";
 import type { projectDetails } from "@/types/types";
 import H2 from "./common/H2.astro";
 
-const porjectsToShow: projectDetails[] = projects.filter(
+const porjectsToShow: projectDetails[] = projects.projects.filter(
   (project: projectDetails) => project.showProject
 );
 ---
 
 <section id="projects">
-  <H2>Projectes</H2>
+  <H2>{projects.title}</H2>
   <div class="grid md:grid-cols-2 gap-4">
     {
       porjectsToShow.map(

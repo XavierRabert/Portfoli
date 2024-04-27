@@ -23,93 +23,67 @@
       }
     ]
   },
-  "experience": [
-    {
-      "name": "Front-end",
-      "company": "Eurofirms",
-      "years": "Maya 2023 - Actualidad",
-      "text": [
-        "Desarrollo de la plataforma CornerJob utilizando React.",
-        "Control de versiones con Git y testing unitario con Jest",
-        "Metodología Agile y Azure DevOps."
-      ]
-    },
-    {
-      "name": "Programador PLC",
-      "company": "Refrica",
-      "years": "14 años",
-      "text": [
-        "Diseño y programación de software.",
-        "Mantenimiento y adaptación de aplicaciones existentes.",
-        "Comunicaciones y conexiones remotas.",
-        "Programación de equipos de control eléctrico industrial."
-      ]
-    },
 
-    {
-      "name": "Programador",
-      "company": "PH Systems",
-      "years": "3 años",
-      "text": [
-        "Diseño y programación de software para gestión de empresas.",
-        "Administrador de bases de datos ORACLE.",
-        "Teleasistencia."
-      ]
-    }
-  ],
-  "experience2": [
-    {
-      "name": "Front-end",
-      "text": [
-        "Desarrollo de la plataforma <a href='http://www.cornerjob.com' target='_blank'text-x-blue'>CornerJob</a> en React.",
-        "Desarrollo de un nuevo portal tecnológico en Angular.",
-        "Control de versiones con Git y testing unitario con Jest.",
-        "Metodología Agile y Azure DevOps."
-      ]
-    },
-    {
-      "name": "Programador",
-      "text": [
-        "Diseño y programación de software para gestión de empresas.",
-        "Administrador de bases de datos ORACLE.",
-        "Consultas SQL para extracción de datos y listados.",
-        "Desarrollo de una aplicación móvil en Visual Basic .NET"
-      ]
-    },
-    {
-      "name": "Programador PLC",
-      "text": [
-        "Diseño y programación de software PLC industrial.",
-        "Mantenimiento y adaptación de aplicaciones existentes.",
-        "Comunicaciones y conexiones remotas.",
-        "Programación de equipos de control eléctrico industrial."
-      ]
-    }
-  ],
-  "projects": [
-    {
-      "imgSrc": "/projecte1.webp",
-      "imgName": "Movies DB",
-      "webLink": "https://landing-react-movies.netlify.app/",
-      "text": "Proyecto de aprendizaje e iniciación a React, consumiendo la API de <a href='http://www.themoviedb.org' target='_blank' class='text-x-blue'>www.themoviedb.org</a>",
-      "showProject": true
-    },
-    {
-      "imgSrc": "/projecte2.webp",
-      "imgName": "Marvel",
-      "webLink": "https://landing-angular-marvel.netlify.app/",
-      "text": "Proyecto de aprendizaje e iniciación en Angular, consumiendo la API de <a href='http://www.marvel.com' target='_blank' class='text-x-blue'>www.marvel.com</a>",
-      "showProject": true
-    },
-    {
-      "imgSrc": "/projecte2.webp",
-      "imgName": "Forms",
-      "webLink": "https://landing-react-movies.netlify.app/",
-      "text": "Proyecto de control y validación de formularios en Next JS, React Hook Forms y Yup consumiendo una API propia en Node JS y Express",
-      "showProject": false
-    }
-  ],
+  "experience": {
+    "title": "Experiencia",
+    "experiences": [
+      {
+        "name": "Front-end",
+        "text": [
+          "Desarrollo de la plataforma <a href='http://www.cornerjob.com' target='_blank'text-x-blue'>CornerJob</a> en React.",
+          "Desarrollo de un nuevo portal tecnológico en Angular.",
+          "Control de versiones con Git y testing unitario con Jest.",
+          "Metodología Agile y Azure DevOps."
+        ]
+      },
+      {
+        "name": "Programador",
+        "text": [
+          "Diseño y programación de software para gestión de empresas.",
+          "Administrador de bases de datos ORACLE.",
+          "Consultas SQL para extracción de datos y listados.",
+          "Desarrollo de una aplicación móvil en Visual Basic .NET"
+        ]
+      },
+      {
+        "name": "Programador PLC",
+        "text": [
+          "Diseño y programación de software PLC industrial.",
+          "Mantenimiento y adaptación de aplicaciones existentes.",
+          "Comunicaciones y conexiones remotas.",
+          "Programación de equipos de control eléctrico industrial."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "projects": [
+      {
+        "imgSrc": "/projecte1.webp",
+        "imgName": "Movies DB",
+        "webLink": "https://landing-react-movies.netlify.app/",
+        "text": "Proyecto de aprendizaje e iniciación a React, consumiendo la API de <a href='http://www.themoviedb.org' target='_blank' class='text-x-blue'>www.themoviedb.org</a>",
+        "showProject": true
+      },
+      {
+        "imgSrc": "/projecte2.webp",
+        "imgName": "Marvel",
+        "webLink": "https://landing-angular-marvel.netlify.app/",
+        "text": "Proyecto de aprendizaje e iniciación en Angular, consumiendo la API de <a href='http://www.marvel.com' target='_blank' class='text-x-blue'>www.marvel.com</a>",
+        "showProject": true
+      },
+      {
+        "imgSrc": "/projecte2.webp",
+        "imgName": "Forms",
+        "webLink": "https://landing-react-movies.netlify.app/",
+        "text": "Proyecto de control y validación de formularios en Next JS, React Hook Forms y Yup consumiendo una API propia en Node JS y Express",
+        "showProject": false
+      }
+    ]
+  },
   "about": {
+    "title": "¿Quien soy?",
     "imgSrc": "/Xavier.png",
     "imgName": "Xavier Rabert",
     "text": [

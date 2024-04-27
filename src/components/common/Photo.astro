@@ -8,8 +8,9 @@ interface Props {
 const { imgSrc, imgName, customStyles } = Astro.props;
 ---
 
-<div class=`relative overflow-y-clip ${customStyles}`>
-  <div class="absolute top-16 rounded-full w-full h-full bg-x-red"></div>
+<div class=`relative overflow-y-clip bg-x-grey justify-end ${customStyles}`>
+  <div class="absolute -bottom-16 rounded-full w-full aspect-square bg-x-red">
+  </div>
   <img
     src={imgSrc}
     alt={imgName}
