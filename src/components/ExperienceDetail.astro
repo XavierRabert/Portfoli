@@ -8,16 +8,22 @@ interface Props {
 const { experience } = Astro.props;
 ---
 
-<div class="mb-3">
-  <h3 class="text-xl text-x-blue">
-    {experience.name}
-  </h3>
-  <div class="mx-1 my-2">
-    {
-      experience.text.map((text) => {
-        const htmlText = `- ${text}`;
-        return <p set:html={htmlText} />;
-      })
-    }
+<li class="mb-10 ms-4">
+  <div
+    class="absolute w-5 h-5 bg-orange-400 rounded-full mt-1.5 -start-2.5 border-4 border-x-dark-blue"
+  >
   </div>
-</div>
+  <div class="grid ml-8 lg:grid-cols-4 m-3">
+    <h3 class="text-2xl text-orange-400 font-bold grid lg:col-span-1">
+      {experience.name}
+    </h3>
+    <div class="mx-1 my-2 grid lg:col-span-3">
+      {
+        experience.text.map((text) => {
+          const htmlText = `- ${text}`;
+          return <p set:html={htmlText} />;
+        })
+      }
+    </div>
+  </div>
+</li>

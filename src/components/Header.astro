@@ -1,25 +1,25 @@
-<header id="#header" class="pb-10">
-  <nav class="border-gray-200 dark:border-gray-600 dark:bg-gray-900">
+---
+import { header } from "@/data/es.json";
+---
+
+<header id="#header">
+  <nav class="bg-x-dark-grey">
     <div
       class="flex flex-wrap justify-end items-center mx-auto max-w-screen-xl p-4"
     >
-      <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      <ul
+        class="flex m-4 text-lg font-medium md:space-x-8 rtl:space-x-reverse text-white gap-4"
       >
-        <ul
-          class="flex flex-col mt-4 text-xl font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse text-x-blue"
-        >
-          <li>
-            <a href="#skills">Experiència</a>
-          </li>
-          <li>
-            <a href="#projects">Projectes</a>
-          </li>
-          <li>
-            <a href="#about">Qui sóc?</a>
-          </li>
-        </ul>
-      </div>
+        {
+          header.map((head) => (
+            <li>
+              <a href={head.link} class="relative z-10">
+                {head.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </nav>
 </header>

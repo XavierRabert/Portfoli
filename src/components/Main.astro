@@ -1,23 +1,37 @@
 ---
 import { main } from "@/data/es.json";
-import Icon from "@/components/Icon.astro";
 import Social from "./common/Social.astro";
-import Photo from "./common/Photo.astro";
+import Header from "./Header.astro";
 ---
 
 <section id="main container">
-  <div class="grid lg:grid-cols-2 mt-28">
-    <Photo
-      imgSrc={main.imgSrc}
-      imgName={main.imgName}
-      customStyles="right-20"
-    />
+  <div class="flex h-screen flex-col bg-x-dark-grey">
+    <Header />
+    <div class="flex h-full">
+      <div
+        class="overflow-y-clip w-5/12 rounded-tr-full h-full bg-x-dark-blue hidden lg:block"
+      >
+      </div>
+    </div>
 
-    <div class="flex flex-col justify-center space-y-4">
-      <h1 class="text-4xl mb-4">{main.title}</h1>
-      <p class="text-xl">
-        {main.text}
-      </p>
+    <div class="absolute flex w-full h-full justify-center">
+      <div
+        class="top-1/3 flex flex-col justify-center p-10 font-montserrat gap-4"
+      >
+        <h2 class="text-2xl md:text-4xl lg:text-6xl text-orange-400 font-bold">
+          {main.imgName}
+        </h2>
+        <h1 class="text-4xl md:text-6xl lg:text-8xl">{main.title}</h1>
+        <div>
+          <p set:html={main.text1} class="text-xl" />
+          <p class="text-xl">
+            {main.text2}
+          </p>
+        </div>
+        <p>
+          <Social />
+        </p>
+      </div>
     </div>
   </div>
 </section>

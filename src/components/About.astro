@@ -1,15 +1,28 @@
 ---
 import { about } from "@/data/es.json";
 import H2 from "./common/H2.astro";
-import Photo from "./common/Photo.astro";
 ---
 
-<section id="about">
-  <div class="grid grid-cols-3">
-    <div class="col-span-2">
+<section id="about" class="pt-8">
+  <div class="flex flex-col md:flex-row justify-center gap-10">
+    <div class="flex
+    flex-col">
       <H2>{about.title}</H2>
       {about.text.map((item) => <p class="pt-1">{item}</p>)}
     </div>
-    <Photo imgSrc={about.imgSrc} imgName={about.imgName} />
+
+    <div class="w-full min-w-48">
+      <div class="flex flex-col gap-2 justify-center items-center h-full">
+        <img
+          class="w-48 h-48 rounded-full shadow-lg"
+          src={about.imgSrc}
+          alt={about.imgName}
+        />
+        <h5 class="text-2xl font-medium text-gray-200">
+          {about.imgName}
+        </h5>
+        <span class="text-md text-orange-500">{about.subtitle}</span>
+      </div>
+    </div>
   </div>
 </section>

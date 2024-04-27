@@ -1,9 +1,15 @@
 {
+  "header": [
+    { "title": "Experiencia", "link": "#skills" },
+    { "title": "Proyectos", "link": "#projects" },
+    { "title": "¿Quien soy?", "link": "#about" }
+  ],
   "main": {
     "imgSrc": "/Xavier.png",
     "imgName": "Xavier Rabert",
-    "title": " Hola, sóc en Xavier",
-    "text": "Creando soluciones de software desde el año 2000. Actualmente, soy desarrollador Front-End en constante evolución.",
+    "title": "Front-end developer",
+    "text1": "Creando <span class='text-orange-400'>soluciones</span> de software desde el año 2000.",
+    "text2": "Desarrollador en constante evolución.",
     "card": {
       "title": "Front-End Developer",
       "text": "Creando soluciones de software desde el año 2000."
@@ -30,7 +36,7 @@
       {
         "name": "Front-end",
         "text": [
-          "Desarrollo de la plataforma <a href='http://www.cornerjob.com' target='_blank'text-x-blue'>CornerJob</a> en React.",
+          "Desarrollo de la plataforma <a href='http://www.cornerjob.com' target='_blank' class='text-orange-400'>CornerJob</a> en React.",
           "Desarrollo de un nuevo portal tecnológico en Angular.",
           "Control de versiones con Git y testing unitario con Jest.",
           "Metodología Agile y Azure DevOps."
@@ -63,14 +69,14 @@
         "imgSrc": "/projecte1.webp",
         "imgName": "Movies DB",
         "webLink": "https://landing-react-movies.netlify.app/",
-        "text": "Proyecto de aprendizaje e iniciación a React, consumiendo la API de <a href='http://www.themoviedb.org' target='_blank' class='text-x-blue'>www.themoviedb.org</a>",
+        "text": "Proyecto de aprendizaje e iniciación a React, consumiendo la API de <a href='http://www.themoviedb.org' target='_blank' class='text-orange-400'>www.themoviedb.org</a>",
         "showProject": true
       },
       {
         "imgSrc": "/projecte2.webp",
         "imgName": "Marvel",
         "webLink": "https://landing-angular-marvel.netlify.app/",
-        "text": "Proyecto de aprendizaje e iniciación en Angular, consumiendo la API de <a href='http://www.marvel.com' target='_blank' class='text-x-blue'>www.marvel.com</a>",
+        "text": "Proyecto de aprendizaje e iniciación en Angular, consumiendo la API de <a href='http://www.marvel.com' target='_blank' class='text-orange-400'>www.marvel.com</a>",
         "showProject": true
       },
       {
@@ -84,6 +90,7 @@
   },
   "about": {
     "title": "¿Quien soy?",
+    "subtitle": "Front-end developer",
     "imgSrc": "/Xavier.png",
     "imgName": "Xavier Rabert",
     "text": [
