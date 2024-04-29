@@ -11,7 +11,9 @@ const porjectsToShow: projectDetails[] = projects.projects.filter(
 
 <section id="projects" class="pt-8">
   <H2>{projects.title}</H2>
-  <div class="md:flex flex-wrap gap-10">
+  <div
+    class="flex flex-col md:flex-row flex-wrap gap-6 justify-center md:justify-start items-center"
+  >
     {
       porjectsToShow.map(
         (project) => project.showProject && <ProjectDetail project={project} />

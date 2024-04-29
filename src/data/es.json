@@ -2,7 +2,7 @@
   "header": [
     { "title": "Experiencia", "link": "#skills" },
     { "title": "Proyectos", "link": "#projects" },
-    { "title": "¿Quien soy?", "link": "#about" }
+    { "title": "¿Quién soy?", "link": "#about" }
   ],
   "main": {
     "imgSrc": "/Xavier.png",
@@ -89,7 +89,7 @@
     ]
   },
   "about": {
-    "title": "¿Quien soy?",
+    "title": "¿Quién soy?",
     "subtitle": "Front-end developer",
     "imgSrc": "/Xavier.png",
     "imgName": "Xavier Rabert",
