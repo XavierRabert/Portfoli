@@ -5,7 +5,7 @@
     { "title": "¿Quién soy?", "link": "#about" }
   ],
   "main": {
-    "imgSrc": "/Xavier.png",
+    "imgSrc": "/Xavier.webp",
     "imgName": "Xavier Rabert",
     "title": "Front-end developer",
     "text1": "Creando <span class='text-orange-400'>soluciones</span> de software desde el año 2000.",
