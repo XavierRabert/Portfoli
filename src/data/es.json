@@ -69,7 +69,7 @@
         "imgSrc": "/projecte1.webp",
         "imgName": "Movies DB",
         "webLink": "https://landing-react-movies.netlify.app/",
-        "text": "Proyecto de aprendizaje e iniciación a React, consumiendo la API de <a href='http://www.themoviedb.org' target='_blank' class='text-orange-400'>www.themoviedb.org</a>",
+        "text": "Proyecto de aprendizaje e iniciación en React, consumiendo la API de <a href='http://www.themoviedb.org' target='_blank' class='text-orange-400'>www.themoviedb.org</a>",
         "showProject": true
       },
       {
