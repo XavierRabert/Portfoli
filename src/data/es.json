@@ -85,6 +85,13 @@
         "webLink": "https://landing-react-movies.netlify.app/",
         "text": "Proyecto de control y validación de formularios en Next JS, React Hook Forms y Yup consumiendo una API propia en Node JS y Express",
         "showProject": false
+      },
+      {
+        "imgSrc": "/projecte3.webp",
+        "imgName": "GSAP",
+        "webLink": "https://landing-gsap.netlify.app/",
+        "text": "Proyecto de animaciones en javascript con la libreria Green Sock (GSAP).<br/> Under Construction",
+        "showProject": true
       }
     ]
   },
