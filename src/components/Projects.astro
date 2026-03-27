@@ -8,22 +8,72 @@ import ProjectDetail from "@/components/ProjectDetail.astro";
 import type { projectDetails } from "@/types/types";
 import H2 from "./common/H2.astro";
 
-const porjectsToShow: projectDetails[] = projects.projects.filter(
+const projectsToShow: projectDetails[] = projects.projects.filter(
   (project: projectDetails) => project.showProject,
 );
+const categories = [
+  "Tots",
+  ...new Set(projectsToShow.map((project: projectDetails) => project.category || "General")),
+];
 ---
 
 ---
 
 <section id="projects" class="pt-8">
-  <H2>{projects.title}</H2>
-  <div
-    class="flex flex-col md:flex-row flex-wrap gap-6 justify-center md:justify-start items-top"
-  >
-    {
-      porjectsToShow.map(
-        (project) => project.showProject && <ProjectDetail project={project} />,
-      )
-    }
+  <div class="mb-6 flex flex-col gap-3 md:gap-0 md:flex-row md:items-center md:justify-between">
+    <H2>{projects.title}</H2>
+
+    <div class="flex flex-wrap gap-2 items-center">
+      {categories.map((cat: string, idx: number) => (
+        <button
+          type="button"
+          class="project-filter px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 bg-slate-800 text-slate-200 ring-1 ring-transparent hover:ring-orange-400 hover:text-orange-300"
+          data-category={cat}
+          aria-label={`Filtrar ${cat}`}
+          key={idx}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
   </div>
+
+  <div
+    id="projects-grid"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+  >
+    {projectsToShow.map((project: projectDetails) => (
+      <div data-project-category={project.category || "General"} class="project-card-wrapper">
+        <ProjectDetail project={project} />
+      </div>
+    ))}
+  </div>
+
+  <script is:inline>
+    const buttons = document.querySelectorAll('.project-filter');
+    const cards = document.querySelectorAll('.project-card-wrapper');
+
+    const filterBy = (category) => {
+      cards.forEach((card) => {
+        if (category === 'Tots') {
+          card.classList.remove('hidden');
+          return;
+        }
+        card.classList.toggle('hidden', card.dataset.projectCategory !== category);
+      });
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const target = event.currentTarget;
+        buttons.forEach((b) => b.classList.remove('bg-orange-500', 'text-slate-900'));
+        target.classList.add('bg-orange-500', 'text-slate-900');
+        filterBy(target.dataset.category);
+      });
+    });
+
+    if (buttons.length > 0) {
+      buttons[0].classList.add('bg-orange-500', 'text-slate-900');
+    }
+  </script>
 </section>
