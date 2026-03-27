@@ -1,17 +1,22 @@
 ---
-import { header } from "@/data/es.json";
+interface Props {
+  data: any;
+}
+const { data } = Astro.props;
+const header = data.header;
+const currentLocale = Astro.currentLocale || "ca";
 ---
 
 <header id="#header">
-  <nav class="bg-x-dark-grey">
+  <nav class="bg-x-dark-grey relative z-20">
     <div
-      class="flex flex-wrap justify-end items-center mx-auto max-w-screen-xl p-4"
+      class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
     >
       <ul
         class="flex m-4 text-sm md:text-lg font-medium md:space-x-8 rtl:space-x-reverse text-white gap-4"
       >
         {
-          header.map((head) => (
+          header.map((head: any) => (
             <li>
               <a href={head.link} class="relative z-10">
                 {head.title}
@@ -20,6 +25,19 @@ import { header } from "@/data/es.json";
           ))
         }
       </ul>
+      <div class="flex gap-2">
+        <a
+          href="/"
+          class={`text-white ${currentLocale === "ca" ? "font-bold" : ""}`}
+          >CA</a
+        >
+        <span class="text-white">|</span>
+        <a
+          href="/es/"
+          class={`text-white ${currentLocale === "es" ? "font-bold" : ""}`}
+          >ES</a
+        >
+      </div>
     </div>
   </nav>
 </header>
