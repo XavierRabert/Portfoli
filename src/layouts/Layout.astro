@@ -6,9 +6,10 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const currentLocale = Astro.currentLocale || "ca";
 ---
 
-<html lang="es" class="scroll-smooth">
+<html lang={currentLocale} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.webp" />

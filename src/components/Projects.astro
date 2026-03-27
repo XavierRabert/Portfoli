@@ -1,12 +1,18 @@
 ---
-import { projects } from "@/data/es.json";
+interface Props {
+  data: any;
+}
+const { data } = Astro.props;
+const projects = data.projects;
 import ProjectDetail from "@/components/ProjectDetail.astro";
 import type { projectDetails } from "@/types/types";
 import H2 from "./common/H2.astro";
 
 const porjectsToShow: projectDetails[] = projects.projects.filter(
-  (project: projectDetails) => project.showProject
+  (project: projectDetails) => project.showProject,
 );
+---
+
 ---
 
 <section id="projects" class="pt-8">
@@ -16,7 +22,7 @@ const porjectsToShow: projectDetails[] = projects.projects.filter(
   >
     {
       porjectsToShow.map(
-        (project) => project.showProject && <ProjectDetail project={project} />
+        (project) => project.showProject && <ProjectDetail project={project} />,
       )
     }
   </div>

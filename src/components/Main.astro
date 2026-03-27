@@ -1,12 +1,16 @@
 ---
-import { main } from "@/data/es.json";
+interface Props {
+  data: any;
+}
+const { data } = Astro.props;
+const main = data.main;
 import Social from "./common/Social.astro";
 import Header from "./Header.astro";
 ---
 
 <section id="main">
   <div class="flex h-screen flex-col bg-x-dark-grey">
-    <Header />
+    <Header data={data} />
     <div class="flex h-full">
       <div
         class="overflow-y-clip w-5/12 rounded-tr-full h-full bg-x-dark-blue hidden lg:block"

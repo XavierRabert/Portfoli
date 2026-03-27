@@ -1,5 +1,9 @@
 ---
-import { experience } from "@/data/es.json";
+interface Props {
+  data: any;
+}
+const { data } = Astro.props;
+const experience = data.experience;
 import ExperienceDetail from "./ExperienceDetail.astro";
 import H2 from "./common/H2.astro";
 ---
@@ -8,6 +12,10 @@ import H2 from "./common/H2.astro";
   <H2> {experience.title} </H2>
 
   <ol class="relative border-s border-gray-200 dark:border-gray-700">
-    {experience.experiences.map((exp) => <ExperienceDetail experience={exp} />)}
+    {
+      experience.experiences.map((exp: any) => (
+        <ExperienceDetail experience={exp} />
+      ))
+    }
   </ol>
 </section>
