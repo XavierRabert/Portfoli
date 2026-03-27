@@ -1,11 +1,13 @@
 ---
+import type { LocaleData } from "@/types/types";
+import Social from "./common/Social.astro";
+import Header from "./Header.astro";
+
 interface Props {
-  data: any;
+  data: LocaleData;
 }
 const { data } = Astro.props;
 const main = data.main;
-import Social from "./common/Social.astro";
-import Header from "./Header.astro";
 ---
 
 <section id="main" class="relative min-h-screen overflow-hidden">
