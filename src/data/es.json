@@ -36,10 +36,11 @@
       {
         "name": "Front-end",
         "text": [
-          "Desarrollo de la plataforma <a href='http://www.cornerjob.com' target='_blank' class='text-orange-400'>CornerJob</a> en React.",
-          "Desarrollo de un nuevo portal tecnológico en Angular.",
-          "Control de versiones con Git y testing unitario con Jest.",
-          "Metodología Agile y Azure DevOps."
+          "Más de 3 años de experiencia desarrollando aplicaciones web modernas con React y Angular.",
+          "Creación de un nuevo portal tecnológico en Angular con Signals para una gestión de estados eficiente y reactiva.",
+          "Mantenimiento y actualización de una librería Angular 14 a Angular 21 en un monorepo NX.",
+          "Proyectos personales: aplicaciones con GSAP para animaciones avanzadas, sitios web con Astro para un rendimiento óptimo, e integraciones con APIs externas como SpaceX y Marvel.",
+          "Control de versiones con Git, testing unitario con Jest, y metodologías Agile con Azure DevOps."
         ]
       },
       {
@@ -64,6 +65,8 @@
   },
   "projects": {
     "title": "Proyectos",
+    "project_button": "Ver proyecto",
+    "code_button": "código",
     "projects": [
       {
         "imgSrc": "/projecte1.webp",
@@ -112,7 +115,7 @@
       {
         "imgSrc": "/projecte4.webp",
         "imgSrcFallback": "/projecte4.png",
-        "imgName": "SpaceX API",
+        "imgName": "SpaceX",
         "webLink": "https://landing-space-x.netlify.app/",
         "text": "Proyecto en Angular que consume la API de <a href='https://github.com/r-spacex/SpaceX-API' target='_blank' class='text-orange-400'>SpaceX</a> para mostrar información sobre lanzamientos, cohetes y misiones espaciales. Incluye componentes dinámicos y gestión de estados con RxJS.",
         "showProject": true,
@@ -123,7 +126,7 @@
       {
         "imgSrc": "/projecte5.webp",
         "imgSrcFallback": "/projecte5.png",
-        "imgName": "SEO Consultoria",
+        "imgName": "Consultoria SEO",
         "webLink": "https://seoambtalons.cat",
         "text": "Página web para una consultoría SEO construida con Astro. Optimizada para motores de búsqueda, con contenido dinámico, formulario de contacto y diseño responsive. Tecnologías: Astro, Tailwind CSS e integraciones con herramientas SEO.",
         "showProject": true,
@@ -142,6 +145,7 @@
       "Después de más de 20 años como programador en el sector industrial, decidí hacer un cambio profesional para volver a mis orígenes, formándome de nuevo como desarrollador web.",
       "El dinamismo de JavaScript y la versatilidad de los frameworks hacen que cada proyecto sea un campo prácticamente infinito de posibilidades que hay que explorar para encontrar la mejor solución.",
       "El análisis y la comprensión de los requerimientos son mi punto fuerte para crear programas sólidos y de calidad."
-    ]
+    ],
+    "description": "Ingeniero de software y Front-End Developer con experiencia en proyectos web e infraestructuras."
   }
 }

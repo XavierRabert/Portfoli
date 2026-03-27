@@ -27,6 +27,7 @@ export type AboutData = {
   imgSrc: string;
   imgName: string;
   text: string[];
+  description: string;
 };
 
 export type ProjectDetails = {
@@ -44,6 +45,8 @@ export type ProjectDetails = {
 
 export type ProjectSection = {
   title: string;
+  project_button: string;
+  code_button: string;
   projects: ProjectDetails[];
 };
 
