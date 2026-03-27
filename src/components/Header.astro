@@ -7,34 +7,40 @@ const header = data.header;
 const currentLocale = Astro.currentLocale || "ca";
 ---
 
-<header id="#header">
-  <nav class="bg-x-dark-grey relative z-20">
+<header
+  id="header"
+  class="sticky top-0 z-30 backdrop-blur-md bg-slate-900/70 border-b border-slate-800"
+>
+  <nav>
     <div
-      class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4"
+      class="flex flex-col md:flex-row md:justify-between md:items-center mx-auto max-w-screen-xl p-4 gap-4"
     >
       <ul
-        class="flex m-4 text-sm md:text-lg font-medium md:space-x-8 rtl:space-x-reverse text-white gap-4"
+        class="flex text-xs md:text-lg font-medium md:space-x-8 rtl:space-x-reverse text-slate-100 gap-2 md:gap-4 flex-wrap"
       >
         {
           header.map((head: any) => (
             <li>
-              <a href={head.link} class="relative z-10">
+              <a
+                href={head.link}
+                class="relative z-10 px-3 py-2 rounded-md transition-colors duration-200 hover:bg-slate-800 hover:text-orange-300"
+              >
                 {head.title}
               </a>
             </li>
           ))
         }
       </ul>
-      <div class="flex gap-2">
+      <div class="flex gap-2 text-sm">
         <a
           href="/"
-          class={`text-white ${currentLocale === "ca" ? "font-bold" : ""}`}
+          class={`px-2 py-1 rounded-md transition-colors duration-200 ${currentLocale === "ca" ? "bg-orange-500 text-slate-900" : "text-slate-300 hover:bg-slate-800"}`}
           >CA</a
         >
-        <span class="text-white">|</span>
+        <span class="text-slate-500">|</span>
         <a
           href="/es/"
-          class={`text-white ${currentLocale === "es" ? "font-bold" : ""}`}
+          class={`px-2 py-1 rounded-md transition-colors duration-200 ${currentLocale === "es" ? "bg-orange-500 text-slate-900" : "text-slate-300 hover:bg-slate-800"}`}
           >ES</a
         >
       </div>

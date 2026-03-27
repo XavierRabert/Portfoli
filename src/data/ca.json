@@ -117,7 +117,7 @@
         "showProject": true,
         "category": "Angular",
         "status": "Live",
-        "stack": ["Angular", "RXJS", "API"]
+        "stack": ["Angular", "Signals", "Tailwind", "API"]
       },
       {
         "imgSrc": "/projecte5.webp",
