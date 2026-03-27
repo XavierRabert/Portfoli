@@ -18,7 +18,9 @@ const allLabel = locale === "es" ? "Todos" : "Tots";
 const categories = [
   allLabel,
   ...new Set(
-    projectsToShow.map((project: ProjectDetails) => project.category || "General"),
+    projectsToShow.map(
+      (project: ProjectDetails) => project.category || "General",
+    ),
   ),
 ];
 ---
@@ -57,7 +59,13 @@ const categories = [
           data-project-category={project.category || "General"}
           class="project-card-wrapper h-full"
         >
-          <ProjectDetail project={project} />
+          <ProjectDetail
+            project={{
+              ...project,
+              project_button: projects.project_button,
+              code_button: projects.code_button,
+            }}
+          />
         </div>
       ))
     }

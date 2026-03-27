@@ -35,10 +35,11 @@
       {
         "name": "Front-end",
         "text": [
-          "Desenvolupament de la plataforma <a href='http://www.cornerjob.com' target='_blank' class='text-orange-400'>CornerJob</a> utilitzant React.",
-          "Desenvolupament d'un nou portal tecnològic en Angular.",
-          "Control de versions amb Git i testing unitari amb Jest.",
-          "Metodología Agile i Azure DevOps."
+          "Més de 3 anys d'experiència desenvolupant aplicacions web modernes amb React i Angular.",
+          "Creació d'un nou portal tecnològic en Angular amb Signals per a una gestió d'estats eficient i reactiva.",
+          "Manteniment i actualització d'una llibreria Angular 14 a Angular 21 en un monorepo NX.",
+          "Projectes personals: aplicacions amb GSAP per animacions avançades, llocs web amb Astro per un rendiment òptim, i integracions amb APIs externes com SpaceX i Marvel.",
+          "Control de versions amb Git, testing unitari amb Jest, i metodologies Agile amb Azure DevOps."
         ]
       },
       {
@@ -63,6 +64,8 @@
   },
   "projects": {
     "title": "Projectes",
+    "project_button": "Veure projecte",
+    "code_button": "codi",
     "projects": [
       {
         "imgSrc": "/projecte1.webp",
@@ -111,7 +114,7 @@
       {
         "imgSrc": "/projecte4.webp",
         "imgSrcFallback": "/projecte4.png",
-        "imgName": "SpaceX API",
+        "imgName": "SpaceX",
         "webLink": "https://landing-space-x.netlify.app/",
         "text": "Projecte en Angular que consumeix l'API de <a href='https://github.com/r-spacex/SpaceX-API' target='_blank' class='text-orange-400'>SpaceX</a> per mostrar informació sobre llançaments, coets i missions espacials. Inclou components dinàmics i gestió d'estats amb RxJS.",
         "showProject": true,
@@ -122,7 +125,7 @@
       {
         "imgSrc": "/projecte5.webp",
         "imgSrcFallback": "/projecte5.png",
-        "imgName": "SEO Consultoria",
+        "imgName": "Consultoria SEO",
         "webLink": "https://seoambtalons.cat",
         "text": "Pàgina web per a una consultoria SEO construïda amb Astro. Optimitzada per motors de cerca, amb contingut dinàmic, formulari de contacte i disseny responsive. Tecnologies: Astro, Tailwind CSS i integracions amb eines SEO.",
         "showProject": true,
@@ -141,6 +144,7 @@
       "L’anàlisi i la comprensió dels requeriments són el meu punt fort per crear programes sòlids i de qualitat."
     ],
     "imgSrc": "/Xavier.webp",
-    "imgName": "Xavier Rabert"
+    "imgName": "Xavier Rabert",
+    "description": "Enginyer de software i Front-End Developer amb experiència en projectes web i infraestructures."
   }
 }
