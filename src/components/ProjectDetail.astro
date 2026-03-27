@@ -2,7 +2,7 @@
 import type { ProjectDetails } from "@/types/types";
 
 interface Props {
-  project: ProjectDetails;
+  project: ProjectDetails & { project_button: string; code_button: string };
 }
 
 const { project } = Astro.props;
@@ -74,7 +74,7 @@ const { project } = Astro.props;
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
       >
-        Ver projecte
+        {project.project_button}
       </a>
       <a
         href={project.codeLink || project.webLink}
@@ -82,7 +82,7 @@ const { project } = Astro.props;
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center rounded-lg border border-slate-500 bg-transparent px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-slate-700"
       >
-        Codi
+        {project.code_button}
       </a>
     </div>
   </div>
