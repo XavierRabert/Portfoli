@@ -1,22 +1,24 @@
 ---
-interface Props {
-  data: any;
-}
-const { data } = Astro.props;
-const projects = data.projects;
+import type { LocaleData, ProjectDetails } from "@/types/types";
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import type { projectDetails } from "@/types/types";
 import H2 from "./common/H2.astro";
 
-const projectsToShow: projectDetails[] = projects.projects.filter(
-  (project: projectDetails) => project.showProject,
+interface Props {
+  data: LocaleData;
+}
+
+const { data } = Astro.props;
+const projects = data.projects;
+
+const projectsToShow: ProjectDetails[] = projects.projects.filter(
+  (project: ProjectDetails) => project.showProject,
 );
+const locale = Astro.currentLocale || "ca";
+const allLabel = locale === "es" ? "Todos" : "Tots";
 const categories = [
-  "Tots",
+  allLabel,
   ...new Set(
-    projectsToShow.map(
-      (project: projectDetails) => project.category || "General",
-    ),
+    projectsToShow.map((project: ProjectDetails) => project.category || "General"),
   ),
 ];
 ---
@@ -50,7 +52,7 @@ const categories = [
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
   >
     {
-      projectsToShow.map((project: projectDetails) => (
+      projectsToShow.map((project: ProjectDetails) => (
         <div
           data-project-category={project.category || "General"}
           class="project-card-wrapper h-full"
@@ -67,7 +69,7 @@ const categories = [
 
     const filterBy = (category) => {
       cards.forEach((card) => {
-        if (category === "Tots") {
+        if (category === allLabel) {
           card.classList.remove("hidden");
           return;
         }

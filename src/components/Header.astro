@@ -1,6 +1,8 @@
 ---
+import type { LocaleData, HeaderItem } from "@/types/types";
+
 interface Props {
-  data: any;
+  data: LocaleData;
 }
 const { data } = Astro.props;
 const header = data.header;
@@ -19,7 +21,7 @@ const currentLocale = Astro.currentLocale || "ca";
         class="flex text-xs md:text-lg font-medium md:space-x-8 rtl:space-x-reverse text-slate-100 gap-2 md:gap-4 flex-wrap"
       >
         {
-          header.map((head: any) => (
+          header.map((head: HeaderItem) => (
             <li>
               <a
                 href={head.link}
