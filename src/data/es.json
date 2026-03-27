@@ -115,7 +115,7 @@
       {
         "imgSrc": "/projecte4.webp",
         "imgSrcFallback": "/projecte4.png",
-        "imgName": "SpaceX API",
+        "imgName": "SpaceX",
         "webLink": "https://landing-space-x.netlify.app/",
         "text": "Proyecto en Angular que consume la API de <a href='https://github.com/r-spacex/SpaceX-API' target='_blank' class='text-orange-400'>SpaceX</a> para mostrar información sobre lanzamientos, cohetes y misiones espaciales. Incluye componentes dinámicos y gestión de estados con RxJS.",
         "showProject": true,
