@@ -17,20 +17,40 @@ const currentLocale = Astro.currentLocale || "ca";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-x-dark-blue font-sans">
+  <body
+    class="bg-gradient-to-br from-[#080b14] via-[#0f1d33] to-[#121a27] font-sans text-slate-100"
+  >
     <style>
       :global(*) {
         color-scheme: dark;
       }
       :global(body) {
-        margin-bottom: 100px;
-      }
-      :global(section) {
-        margin-bottom: 16px;
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(
+            circle at 20% 10%,
+            rgba(46, 105, 255, 0.14) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(231, 118, 255, 0.08) 0%,
+            transparent 40%
+          ),
+          linear-gradient(145deg, #070a14 0%, #0f1c30 35%, #111a2c 100%);
       }
       :global(p) {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      :global(.glass-card) {
+        background: rgba(15, 23, 42, 0.72);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+      }
+      :global(*:focus-visible) {
+        outline: 2px solid #f97316;
+        outline-offset: 3px;
       }
     </style>
     <slot />

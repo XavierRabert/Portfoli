@@ -8,25 +8,35 @@ import H2 from "./common/H2.astro";
 ---
 
 <section id="about" class="pt-8">
-  <div class="flex flex-col md:flex-row justify-center gap-10">
-    <div class="flex
-    flex-col">
-      <H2>{about.title}</H2>
-      {about.text.map((item: any) => <p class="pt-1">{item}</p>)}
+  <H2>{about.title}</H2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div
+      class="glass-card rounded-2xl border border-slate-700 p-6 shadow-xl order-2 md:order-1"
+    >
+      <h3 class="text-xl text-orange-400 font-bold mb-4">Sobre mi</h3>
+      {
+        about.text.map((item: any) => (
+          <p class="text-slate-200 mb-3 leading-relaxed">{item}</p>
+        ))
+      }
     </div>
 
-    <div class="w-full min-w-48">
-      <div class="flex flex-col gap-2 justify-center items-center h-full">
-        <img
-          class="w-48 h-48 rounded-full shadow-lg"
-          src={about.imgSrc}
-          alt={about.imgName}
-        />
-        <h5 class="text-2xl font-medium text-gray-200">
-          {about.imgName}
-        </h5>
-        <span class="text-md text-orange-500">{about.subtitle}</span>
-      </div>
+    <div
+      class="glass-card rounded-2xl border border-slate-700 p-8 shadow-xl order-1 md:order-2 flex flex-col items-center justify-center"
+    >
+      <img
+        class="h-40 w-40 rounded-full border-4 border-orange-400 object-cover mb-4"
+        src={about.imgSrc}
+        alt={about.imgName}
+      />
+      <h5 class="text-2xl font-bold text-slate-100 text-center">
+        {about.imgName}
+      </h5>
+      <p class="text-lg text-orange-400 text-center mt-1">{about.subtitle}</p>
+      <p class="mt-3 text-slate-300 text-center text-sm">
+        Enginyer de software i Front-End Developer amb experiència en projectes
+        web i infraestructures.
+      </p>
     </div>
   </div>
 </section>
