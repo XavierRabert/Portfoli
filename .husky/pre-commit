@@ -1,0 +1,2 @@
+echo "🚀 Revisant el portfolio abans de pujar..."
+npm run typecheck && npm run check

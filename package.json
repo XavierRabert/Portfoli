@@ -7,7 +7,10 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky",
+    "check": "astro check",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -18,6 +21,7 @@
     "typescript": "^5.4.4"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "^3.2.5"
   }
 }
