@@ -1,0 +1,71 @@
+---
+import RedesignLayout from "@/layouts/RedesignLayout.astro";
+---
+
+<RedesignLayout
+  title="Preview — Xavier Rabert"
+  description="Visual direction and design foundation preview for the new Xavier Rabert portfolio."
+>
+  <div class="redesign-shell">
+    <header class="flex items-center justify-between" style="padding-block: 28px; border-bottom: 1px solid var(--color-border);">
+      <a href="/preview" aria-label="Xavier Rabert home" style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-decoration: none; letter-spacing: -0.06em;">
+        XR<span style="color: var(--color-accent);">.</span>
+      </a>
+      <nav aria-label="Main navigation" class="flex items-center" style="gap: 24px; color: var(--color-muted); font-size: 0.85rem;">
+        <a href="#work" style="text-decoration: none;">Work</a>
+        <a href="#about" style="text-decoration: none;">About</a>
+        <a href="#contact" style="text-decoration: none;">Contact</a>
+      </nav>
+    </header>
+
+    <main style="padding-block: clamp(88px, 16vh, 160px) 100px;">
+      <p class="redesign-kicker">Frontend engineer · Portfolio redesign</p>
+      <h1 class="redesign-display">
+        Building digital<br />
+        experiences with<br />
+        <em>purpose.</em>
+      </h1>
+      <p class="redesign-muted" style="max-width: 560px; font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.75;">
+        A new space for the things I build, the problems I enjoy solving,
+        and the ideas I keep exploring.
+      </p>
+      <div class="flex items-center" style="flex-wrap: wrap; gap: 12px; margin-top: 32px;">
+        <a class="redesign-link redesign-link--primary" href="#work">Explore selected work <span aria-hidden="true" style="margin-left: 10px;">↗</span></a>
+        <a class="redesign-link" href="#contact">Get in touch</a>
+      </div>
+
+      <section id="work" aria-labelledby="foundation-title" style="margin-top: clamp(100px, 16vh, 160px);">
+        <p class="redesign-kicker">The visual foundation</p>
+        <h2 id="foundation-title" style="margin: 18px 0 28px; font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -0.06em;">Quiet confidence. Clear ideas.</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5" style="gap: 12px;">
+          {[
+            { name: "Background", value: "#111315", color: "#111315" },
+            { name: "Surface", value: "#1B1F22", color: "#1B1F22" },
+            { name: "Text", value: "#F0F0EC", color: "#F0F0EC" },
+            { name: "Muted", value: "#92999A", color: "#92999A" },
+            { name: "Accent", value: "#C2F970", color: "#C2F970" },
+          ].map((swatch) => (
+            <div class="redesign-panel" style="padding: 12px;">
+              <div aria-hidden="true" style={`height: 68px; border-radius: 10px; background: ${swatch.color}; border: 1px solid rgba(255,255,255,.08);`}></div>
+              <p style="margin: 14px 0 4px; font-size: .8rem; font-weight: 600;">{swatch.name}</p>
+              <p class="redesign-muted" style="margin: 0; font-size: .72rem;">{swatch.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" class="redesign-panel" style="margin-top: 24px; padding: 24px;">
+        <p class="redesign-kicker">Design principles</p>
+        <div class="grid md:grid-cols-3" style="gap: 24px; margin-top: 20px;">
+          <div><h3 style="margin: 0 0 8px; font-size: 1rem;">Editorial</h3><p class="redesign-muted" style="margin: 0; font-size: .9rem;">Strong typography and generous space. Content comes first.</p></div>
+          <div><h3 style="margin: 0 0 8px; font-size: 1rem;">Human</h3><p class="redesign-muted" style="margin: 0; font-size: .9rem;">Professional at its core, with room for personality.</p></div>
+          <div><h3 style="margin: 0 0 8px; font-size: 1rem;">Purposeful</h3><p class="redesign-muted" style="margin: 0; font-size: .9rem;">Subtle interactions, responsive layouts and no visual noise.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="redesign-muted" style="padding-block: 24px 40px; border-top: 1px solid var(--color-border); font-size: .8rem;">
+      Preview only · Existing website remains unchanged.
+    </footer>
+  </div>
+</RedesignLayout>
