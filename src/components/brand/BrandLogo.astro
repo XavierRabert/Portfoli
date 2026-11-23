@@ -10,20 +10,24 @@ const { href = "/preview" } = Astro.props;
 <a class="brand-logo" href={href} aria-label="Xavier Rabert — inici">
   <svg
     class="brand-mark-svg"
-    viewBox="0 0 100 60"
+    viewBox="0 0 340 145"
     role="img"
     aria-label="XR"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <!-- X: dues diagonals blanques, amb el creuament net i contundent -->
     <path
-      d="M3 5H20L40 27L60 5H77L49 31L77 55H59L40 37L20 55H3L31 31L3 5Z"
+      d="M0 0H49L171 145H122L0 0ZM153 0H202L80 145H31L153 0Z"
       fill="#F0F0EC"
     />
+    <!-- R: cos verd amb contraforma oberta i cama diagonal -->
     <path
-      d="M49 5H75C92 5 96 28 80 35L98 55H78L61 36H49V55H33L49 31V5ZM65 18V25H74C79 25 79 18 74 18H65Z"
       fill="#C2F970"
       fill-rule="evenodd"
+      d="M137 0H272C311 0 333 20 333 49C333 75 317 91 289 98L340 145H280L222 88H178L137 48V0ZM183 30L178 66H268C282 66 291 60 291 48C291 36 282 30 268 30H183Z"
     />
+    <!-- Faceta del punt d'unió, present a la marca de referència -->
+    <path d="M137 0H183L137 48Z" fill="#D9FF79" opacity=".78" />
   </svg>
   <span class="brand-name">Xavier<br />Rabert</span>
 </a>
@@ -31,16 +35,15 @@ const { href = "/preview" } = Astro.props;
 <style>
   .brand-mark-svg {
     display: block;
-    width: 84px;
-    height: 51px;
+    width: 92px;
+    height: auto;
     flex: 0 0 auto;
     overflow: visible;
   }
 
   @media (max-width: 600px) {
     .brand-mark-svg {
-      width: 72px;
-      height: 44px;
+      width: 76px;
     }
   }
 </style>
