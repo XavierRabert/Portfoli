@@ -1,71 +1,95 @@
 ---
 import RedesignLayout from "@/layouts/RedesignLayout.astro";
+import BrandLogo from "@/components/brand/BrandLogo.astro";
 ---
 
 <RedesignLayout
-  title="Preview — Xavier Rabert"
-  description="Visual direction and design foundation preview for the new Xavier Rabert portfolio."
+  title="Xavier Rabert — Frontend Engineer"
+  description="Portfolio de Xavier Rabert. Desenvolupament frontend, Angular i experiències digitals."
 >
   <div class="redesign-shell">
-    <header class="flex items-center justify-between" style="padding-block: 28px; border-bottom: 1px solid var(--color-border);">
-      <a href="/preview" aria-label="Xavier Rabert home" style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-decoration: none; letter-spacing: -0.06em;">
-        XR<span style="color: var(--color-accent);">.</span>
-      </a>
-      <nav aria-label="Main navigation" class="flex items-center" style="gap: 24px; color: var(--color-muted); font-size: 0.85rem;">
-        <a href="#work" style="text-decoration: none;">Work</a>
-        <a href="#about" style="text-decoration: none;">About</a>
-        <a href="#contact" style="text-decoration: none;">Contact</a>
+    <header class="site-header">
+      <BrandLogo />
+      <nav class="desktop-nav" aria-label="Navegació principal">
+        <a href="#work">Projectes</a>
+        <a href="#about">Sobre mi</a>
+        <a href="#contact">Contacte</a>
+        <div class="language-switch" aria-label="Idioma">
+          <a class="is-active" href="/preview" lang="ca" aria-current="page">CA</a>
+          <a href="/es/" lang="es">ES</a>
+        </div>
       </nav>
+      <details class="mobile-menu">
+        <summary aria-label="Obrir menú de navegació">
+          <span></span><span></span>
+        </summary>
+        <nav aria-label="Navegació mòbil">
+          <a href="#work">Projectes</a>
+          <a href="#about">Sobre mi</a>
+          <a href="#contact">Contacte</a>
+          <div class="language-switch">
+            <a class="is-active" href="/preview" lang="ca" aria-current="page">CA</a>
+            <a href="/es/" lang="es">ES</a>
+          </div>
+        </nav>
+      </details>
     </header>
 
-    <main style="padding-block: clamp(88px, 16vh, 160px) 100px;">
-      <p class="redesign-kicker">Frontend engineer · Portfolio redesign</p>
-      <h1 class="redesign-display">
-        Building digital<br />
-        experiences with<br />
-        <em>purpose.</em>
-      </h1>
-      <p class="redesign-muted" style="max-width: 560px; font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.75;">
-        A new space for the things I build, the problems I enjoy solving,
-        and the ideas I keep exploring.
-      </p>
-      <div class="flex items-center" style="flex-wrap: wrap; gap: 12px; margin-top: 32px;">
-        <a class="redesign-link redesign-link--primary" href="#work">Explore selected work <span aria-hidden="true" style="margin-left: 10px;">↗</span></a>
-        <a class="redesign-link" href="#contact">Get in touch</a>
-      </div>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="redesign-kicker">Frontend engineer <span>·</span> Angular</p>
+          <h1 id="hero-title">Hola, soc<br />en Xavier<span class="hero-period">.</span></h1>
+          <p class="hero-lead">
+            Dissenyo i construeixo <em>experiències digitals</em> amb codi net,
+            criteri i atenció pels detalls.
+          </p>
+          <p class="hero-support">
+            Un espai per descobrir els projectes que faig i les idees que m'agrada explorar.
+          </p>
+          <div class="hero-actions">
+            <a class="redesign-link redesign-link--primary" href="#work">
+              Veure projectes <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#contact">Parlem-ne <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-note"><span aria-hidden="true"></span> Treballant des de Catalunya</p>
+        </div>
 
-      <section id="work" aria-labelledby="foundation-title" style="margin-top: clamp(100px, 16vh, 160px);">
-        <p class="redesign-kicker">The visual foundation</p>
-        <h2 id="foundation-title" style="margin: 18px 0 28px; font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -0.06em;">Quiet confidence. Clear ideas.</h2>
-        <div class="grid grid-cols-2 md:grid-cols-5" style="gap: 12px;">
-          {[
-            { name: "Background", value: "#111315", color: "#111315" },
-            { name: "Surface", value: "#1B1F22", color: "#1B1F22" },
-            { name: "Text", value: "#F0F0EC", color: "#F0F0EC" },
-            { name: "Muted", value: "#92999A", color: "#92999A" },
-            { name: "Accent", value: "#C2F970", color: "#C2F970" },
-          ].map((swatch) => (
-            <div class="redesign-panel" style="padding: 12px;">
-              <div aria-hidden="true" style={`height: 68px; border-radius: 10px; background: ${swatch.color}; border: 1px solid rgba(255,255,255,.08);`}></div>
-              <p style="margin: 14px 0 4px; font-size: .8rem; font-weight: 600;">{swatch.name}</p>
-              <p class="redesign-muted" style="margin: 0; font-size: .72rem;">{swatch.value}</p>
-            </div>
-          ))}
+        <div class="portrait-placeholder" role="img" aria-label="Espai reservat per a una fotografia de Xavier">
+          <div class="portrait-frame">
+            <span class="portrait-corner portrait-corner--top"></span>
+            <span class="portrait-monogram" aria-hidden="true">XR</span>
+            <span class="portrait-caption">La foto bona està en camí ;)</span>
+            <span class="portrait-index">01 / INTRO</span>
+            <span class="portrait-corner portrait-corner--bottom"></span>
+          </div>
+          <span class="portrait-orbit" aria-hidden="true"></span>
         </div>
       </section>
 
-      <section id="about" class="redesign-panel" style="margin-top: 24px; padding: 24px;">
-        <p class="redesign-kicker">Design principles</p>
-        <div class="grid md:grid-cols-3" style="gap: 24px; margin-top: 20px;">
-          <div><h3 style="margin: 0 0 8px; font-size: 1rem;">Editorial</h3><p class="redesign-muted" style="margin: 0; font-size: .9rem;">Strong typography and generous space. Content comes first.</p></div>
-          <div><h3 style="margin: 0 0 8px; font-size: 1rem;">Human</h3><p class="redesign-muted" style="margin: 0; font-size: .9rem;">Professional at its core, with room for personality.</p></div>
-          <div><h3 style="margin: 0 0 8px; font-size: 1rem;">Purposeful</h3><p class="redesign-muted" style="margin: 0; font-size: .9rem;">Subtle interactions, responsive layouts and no visual noise.</p></div>
+      <section id="work" class="intro-section" aria-labelledby="work-title">
+        <div>
+          <p class="redesign-kicker">Una mica del que faig</p>
+          <h2 id="work-title">Tecnologia amb<br /><em>intenció.</em></h2>
         </div>
+        <p class="intro-copy">
+          M'agrada entendre els problemes, trobar solucions clares i convertir-les
+          en productes digitals útils. Aquí és on anirem descobrint alguns dels meus projectes.
+        </p>
+      </section>
+
+      <section id="about" class="principles" aria-label="Principis de treball">
+        <article><span>01</span><h3>Bon criteri tècnic</h3><p>Arquitectura clara, codi mantenible i decisions amb sentit.</p></article>
+        <article><span>02</span><h3>Experiència d'usuari</h3><p>Interfícies cuidades, accessibles i agradables d'utilitzar.</p></article>
+        <article><span>03</span><h3>Aprendre construint</h3><p>Experimentar, prototipar i fer que les idees passin coses.</p></article>
       </section>
     </main>
 
-    <footer id="contact" class="redesign-muted" style="padding-block: 24px 40px; border-top: 1px solid var(--color-border); font-size: .8rem;">
-      Preview only · Existing website remains unchanged.
+    <footer id="contact" class="site-footer">
+      <p>Hi ha alguna cosa interessant entre mans?</p>
+      <a href="mailto:hola@xavierrabert.com">Parlem-ne <span aria-hidden="true">↗</span></a>
+      <small>© {new Date().getFullYear()} Xavier Rabert</small>
     </footer>
   </div>
 </RedesignLayout>
