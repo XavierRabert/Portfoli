@@ -49,28 +49,15 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  gap: 18px;
   color: var(--color-text);
   text-decoration: none;
 }
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-display);
-  font-size: 2.35rem;
-  font-weight: 700;
-  letter-spacing: -0.19em;
-  line-height: 1;
-}
-.brand-mark-x { color: var(--color-text); }
-.brand-mark-r { color: var(--color-accent); transform: translateY(1px); }
 .brand-name {
-  padding-left: 12px;
-  border-left: 1px solid var(--color-border);
   font-size: .7rem;
-  font-weight: 650;
-  letter-spacing: .19em;
-  line-height: 1.55;
+  font-weight: 500;
+  letter-spacing: .34em;
+  line-height: 1.45;
   text-transform: uppercase;
 }
 
