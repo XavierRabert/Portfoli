@@ -15,18 +15,15 @@ const { href = "/preview" } = Astro.props;
     aria-label="XR"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <!-- X: dues diagonals blanques, amb el creuament net i contundent -->
     <path
       d="M0 0H49L171 145H122L0 0ZM153 0H202L80 145H31L153 0Z"
       fill="#F0F0EC"
     />
-    <!-- R: cos verd amb contraforma oberta i cama diagonal -->
     <path
       fill="#C2F970"
       fill-rule="evenodd"
-      d="M137 0H272C311 0 333 20 333 49C333 75 317 91 289 98L340 145H280L222 88H178L137 48V0ZM183 30L178 66H268C282 66 291 60 291 48C291 36 282 30 268 30H183Z"
+      d="M137 0H272C311 0 333 20 333 49C333 75 317 91 289 98L340 145H280L222 88H178L137 48V0ZM183 30H268C282 30 291 36 291 48C291 60 282 66 268 66H183Z"
     />
-    <!-- Faceta del punt d'unió, present a la marca de referència -->
     <path d="M137 0H183L137 48Z" fill="#D9FF79" opacity=".78" />
   </svg>
   <span class="brand-name">Xavier<br />Rabert</span>
@@ -44,6 +41,10 @@ const { href = "/preview" } = Astro.props;
   @media (max-width: 600px) {
     .brand-mark-svg {
       width: 76px;
+    }
+
+    .brand-name {
+      display: none;
     }
   }
 </style>
