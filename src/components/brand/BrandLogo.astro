@@ -1,0 +1,14 @@
+---
+interface Props {
+  href?: string;
+}
+
+const { href = "/preview" } = Astro.props;
+---
+
+<a class="brand-logo" href={href} aria-label="Xavier Rabert — inici">
+  <span class="brand-mark" aria-hidden="true">
+    <span class="brand-mark-x">X</span><span class="brand-mark-r">R</span>
+  </span>
+  <span class="brand-name">Xavier<br />Rabert</span>
+</a>
