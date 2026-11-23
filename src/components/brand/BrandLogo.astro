@@ -1,5 +1,4 @@
 ---
-
 interface Props {
   href?: string;
 }
@@ -8,43 +7,27 @@ const { href = "/preview" } = Astro.props;
 ---
 
 <a class="brand-logo" href={href} aria-label="Xavier Rabert — inici">
-  <svg
-    class="brand-mark-svg"
-    viewBox="0 0 340 145"
-    role="img"
-    aria-label="XR"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 0H49L171 145H122L0 0ZM153 0H202L80 145H31L153 0Z"
-      fill="#F0F0EC"
-    />
-    <path
-      fill="#C2F970"
-      fill-rule="evenodd"
-      d="M137 0H272C311 0 333 20 333 49C333 75 317 91 289 98L340 145H280L222 88H178L137 48V0ZM183 30H268C282 30 291 36 291 48C291 60 282 66 268 66H183Z"
-    />
-    <path d="M137 0H183L137 48Z" fill="#D9FF79" opacity=".78" />
-  </svg>
-  <span class="brand-name">Xavier<br />Rabert</span>
+  <img
+    class="brand-lockup"
+    src="/brand/xr-lockup.svg"
+    alt="Xavier Rabert"
+    width="700"
+    height="180"
+    fetchpriority="high"
+  />
 </a>
 
 <style>
-  .brand-mark-svg {
+  .brand-lockup {
     display: block;
-    width: 92px;
+    width: clamp(210px, 23vw, 270px);
     height: auto;
     flex: 0 0 auto;
-    overflow: visible;
   }
 
   @media (max-width: 600px) {
-    .brand-mark-svg {
-      width: 76px;
-    }
-
-    .brand-name {
-      display: none;
+    .brand-lockup {
+      width: 190px;
     }
   }
 </style>
