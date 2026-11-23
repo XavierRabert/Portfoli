@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" role="img" aria-labelledby="title desc">
+  <title id="title">Xavier Rabert</title>
+  <desc id="desc">Monograma XR blanc i verd llima, amb el nom Xavier Rabert a dues línies.</desc>
+  <g>
+    <path d="M0 0h48l122 180h-48L0 0Z" fill="#F0F0EC"/>
+    <path d="M170 0h48L96 180H48L170 0Z" fill="#F0F0EC"/>
+    <path fill="#C2F970" fill-rule="evenodd" d="M132 0h114c59 0 90 29 90 76 0 38-23 61-61 70l65 34h-65l-63-35h-34l-46-46V0Zm49 35v75h64c23 0 35-13 35-38s-12-37-35-37h-64Z" clip-rule="evenodd"/>
+  </g>
+  <g font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="500" letter-spacing="9">
+    <text x="390" y="78" fill="#F0F0EC">XAVIER</text>
+    <text x="390" y="140" fill="#C2F970">RABERT</text>
+  </g>
+</svg>
