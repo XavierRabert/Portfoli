@@ -1,0 +1,29 @@
+---
+import "@fontsource/montserrat-alternates";
+import "@/styles/redesign.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Xavier Rabert — Frontend Engineer",
+  description = "Personal portfolio of Xavier Rabert, frontend engineer.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#111315" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
