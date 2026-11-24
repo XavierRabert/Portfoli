@@ -1,36 +1,6 @@
 ---
-const projects = [
-  {
-    number: "01",
-    name: "Arcana",
-    eyebrow: "Producte personal · Desenvolupament pausat",
-    description:
-      "Una aplicació completa per gestionar col·leccions i maços Commander de Magic: The Gathering. Inclou inventari de cartes, wishlist, sincronització, anàlisi de maços i una interfície pròpia.",
-    stack: ["Angular 21", "TypeScript", "Signals", "Tailwind CSS 4", "Supabase", "Scryfall"],
-    kind: "arcana",
-    href: "https://arcana.xavierrabert.com",
-  },
-  {
-    number: "02",
-    name: "SEO amb Talons",
-    eyebrow: "Web professional · Publicada",
-    description:
-      "Disseny i desenvolupament de la web de la consultoria SEO de Laia Xarau, amb Astro i una interfície responsive. Inclou un formulari de contacte connectat a una automatització de Make.",
-    stack: ["Astro 6", "Tailwind CSS 4", "React 19", "Make"],
-    kind: "seo",
-    href: "https://www.seoambtalons.cat",
-  },
-  {
-    number: "03",
-    name: "SpaceX Mission Control",
-    eyebrow: "Projecte personal · Aplicació publicada",
-    description:
-      "Un dashboard espacial desenvolupat amb Angular per explorar llançaments, coets i missions. Integració amb Launch Library 2, adaptació de dades externes, gestió d'errors i una capa de caché a Netlify per fer el servei més robust.",
-    stack: ["Angular", "TypeScript", "API REST", "Netlify Functions", "CDN Cache"],
-    kind: "spacex",
-    href: "https://landing-space-x.netlify.app/",
-  },
-];
+import ProjectCard from "@/components/projects/ProjectCard.astro";
+import { projects } from "@/data/projects";
 ---
 
 <section id="projects" class="project-showcase" aria-labelledby="projects-title">
@@ -46,89 +16,7 @@ const projects = [
   </div>
 
   <div class="project-grid">
-    {projects.map((project) => (
-      <article class:list={["project-card", `project-card--${project.kind}`]}>
-        <div class="project-visual">
-          {project.kind === "spacex" ? (
-            <div class="spacex-art" aria-label="Identitat visual de SpaceX Mission Control">
-              <div class="spacex-art-top">
-                <span>SPACEX</span>
-                
-              </div>
-              <div class="spacex-orbit spacex-orbit--one"></div>
-              <div class="spacex-orbit spacex-orbit--two"></div>
-              <div class="spacex-brand">
-                <span class="spacex-word">SPACE <span>X</span></span>
-                <span class="spacex-caption">MISSION CONTROL</span>
-                <span class="spacex-subcaption">FLIGHT DATA · LAUNCH SYSTEMS</span>
-              </div>
-              <div class="spacex-art-bottom">
-                <span>01 / LAUNCHES</span>
-                <span>02 / VEHICLES</span>
-                <span>03 / MISSIONS</span>
-              </div>
-            </div>
-          ) : project.kind === "seo" ? (
-            <div class="seo-art" aria-label="Logotip de SEO amb Talons">
-              <div class="seo-art-top">
-                <span>WEB PROFESSIONAL</span>
-              </div>
-              <div class="seo-brand">
-                <span class="seo-word">SEO<span>amb</span>Talons</span>
-                <span class="seo-caption">ESTRATÈGIA · VISIBILITAT · CREIXEMENT</span>
-              </div>
-              <div class="seo-art-bottom">
-                <span>SEO</span>
-                <span>CONTINGUT</span>
-                <span>ESTRATÈGIA DIGITAL</span>
-              </div>
-            </div>
-          ) : (
-            <div class="arcana-art" aria-label="Identitat visual del projecte Arcana">
-              <div class="arcana-art-top">
-                <span>PERSONAL PROJECT</span>
-              </div>
-              <div class="arcana-brand">
-                <img
-                  src="https://arcana.xavierrabert.com/assets/arcana-mark.svg"
-                  alt="Símbol d'Arcana"
-                  width="76"
-                  height="76"
-                  loading="lazy"
-                />
-                <span class="arcana-word">MTG ARCANA</span>
-                <span class="arcana-caption">COMMANDER COMPANION</span>
-              </div>
-              <div class="arcana-art-bottom">
-                <span>DECKS</span>
-                <span>COLLECTION</span>
-                <span>DECK ADVISOR</span>
-              </div>
-            </div>
-          )}
-          <span class="project-number">{project.number}</span>
-        </div>
-
-        <div class="project-content">
-          <p class="project-eyebrow">{project.eyebrow}</p>
-          <h3>{project.name}</h3>
-          <p class="project-description">{project.description}</p>
-          <ul class="project-stack" aria-label="Tecnologies">
-            {project.stack.map((technology) => <li>{technology}</li>)}
-          </ul>
-          {project.href && (
-            <a
-              class="project-link"
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visitar el projecte <span aria-hidden="true">↗</span>
-            </a>
-          )}
-        </div>
-      </article>
-    ))}
+    {projects.map((project) => <ProjectCard project={project} />)}
   </div>
 </section>
 
@@ -137,7 +25,6 @@ const projects = [
     padding-block: 88px 104px;
     border-top: 1px solid var(--color-border);
   }
-
   .project-heading {
     display: grid;
     grid-template-columns: 1fr .8fr;
@@ -145,7 +32,6 @@ const projects = [
     align-items: end;
     margin-bottom: 38px;
   }
-
   .project-heading h2 {
     margin: 18px 0 0;
     font-family: var(--font-display);
@@ -153,12 +39,10 @@ const projects = [
     letter-spacing: -.075em;
     line-height: 1.04;
   }
-
   .project-heading h2 em {
     color: var(--color-accent);
     font-style: normal;
   }
-
   .project-heading-copy {
     max-width: 460px;
     margin: 0 0 5px;
@@ -166,383 +50,19 @@ const projects = [
     font-size: .96rem;
     line-height: 1.8;
   }
-
   .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
-
-  .project-card {
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    background: var(--color-surface);
-  }
-
-  .project-visual {
-    position: relative;
-    height: clamp(220px, 27vw, 340px);
-    overflow: hidden;
-    background: #171c1c;
-  }
-
-  .project-visual > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    transition: transform 500ms ease;
-  }
-
-  .spacex-art {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 24px 28px;
-    background:
-      radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, .075), transparent 42%),
-      linear-gradient(145deg, #101214, #030405 72%);
-    color: #f5f7f8;
-  }
-
-  .spacex-art::before {
-    position: absolute;
-    inset: 14px;
-    border: 1px solid rgba(255, 255, 255, .14);
-    content: "";
-    pointer-events: none;
-  }
-
-  .spacex-art-top,
-  .spacex-art-bottom {
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    color: rgba(255, 255, 255, .48);
-    font-size: .56rem;
-    letter-spacing: .17em;
-  }
-
-  .spacex-brand {
-    z-index: 2;
-    display: grid;
-    justify-items: center;
-    gap: 10px;
-  }
-
-  .spacex-word {
-    color: #fff;
-    -webkit-text-fill-color: #fff;
-  }
-
-  .spacex-word span {
-    color: var(--color-cyan-400, oklch(78.9% .154 211.53));
-    -webkit-text-fill-color: var(--color-cyan-400, oklch(78.9% .154 211.53));
-  }
-
-  .spacex-word {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(2.7rem, 6vw, 5.2rem);
-    font-weight: 800;
-    letter-spacing: -.095em;
-    line-height: .9;
-  }
-
-  .spacex-caption {
-    color: #f5f7f8;
-    font-size: clamp(.72rem, 1.2vw, .9rem);
-    font-weight: 600;
-    letter-spacing: .34em;
-  }
-
-  .spacex-subcaption {
-    margin-top: 4px;
-    color: rgba(255, 255, 255, .46);
-    font-size: .52rem;
-    letter-spacing: .2em;
-  }
-
-  .spacex-orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: min(66%, 420px);
-    aspect-ratio: 2.5;
-    border: 1px solid rgba(255, 255, 255, .14);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) rotate(-18deg);
-    pointer-events: none;
-  }
-
-  .spacex-orbit--two {
-    width: min(76%, 500px);
-    border-color: rgba(255, 255, 255, .07);
-    transform: translate(-50%, -50%) rotate(18deg);
-  }
-
-  .project-card:hover .project-visual > img {
-    transform: scale(1.035);
-  }
-
-  .project-number {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: grid;
-    width: 34px;
-    height: 34px;
-    place-items: center;
-    border: 1px solid rgba(240, 240, 236, .24);
-    border-radius: 50%;
-    background: rgba(17, 19, 21, .72);
-    color: var(--color-text);
-    font-size: .68rem;
-    backdrop-filter: blur(8px);
-  }
-
-  .seo-art {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 24px 28px;
-    background: #000;
-  }
-
-  .seo-art-top,
-  .seo-art-bottom {
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    color: rgba(245, 240, 235, .48);
-    font-size: .58rem;
-    letter-spacing: .16em;
-  }
-
-  .seo-brand {
-    z-index: 1;
-    display: grid;
-    justify-items: center;
-    gap: 14px;
-  }
-
-  .seo-word {
-    color: #f5f0eb;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
-    font-weight: 700;
-    letter-spacing: .015em;
-    white-space: nowrap;
-  }
-
-  .seo-word span { color: #e8472a; }
-
-  .seo-caption {
-    color: #e8472a;
-    font-size: .58rem;
-    letter-spacing: .2em;
-    text-align: center;
-  }
-
-  .arcana-art {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 24px 28px;
-    background:
-      radial-gradient(ellipse at 50% 48%, rgba(213, 168, 78, .17), transparent 46%),
-      linear-gradient(145deg, #24221b, #111312 72%);
-  }
-
-  .arcana-art::before,
-  .arcana-art::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 220px;
-    aspect-ratio: 1;
-    border: 1px solid rgba(213, 168, 78, .2);
-    border-radius: 50%;
-    content: "";
-    transform: translate(-50%, -50%);
-  }
-
-  .arcana-art::after {
-    width: 280px;
-    border-color: rgba(213, 168, 78, .1);
-  }
-
-  .arcana-art-top,
-  .arcana-art-bottom {
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    color: rgba(240, 233, 217, .52);
-    font-size: .58rem;
-    letter-spacing: .16em;
-  }
-
-  .arcana-brand {
-    z-index: 1;
-    display: grid;
-    justify-items: center;
-    gap: 10px;
-  }
-
-  .arcana-brand img {
-    width: 76px;
-    height: 76px;
-    filter: drop-shadow(0 8px 24px rgba(213, 168, 78, .2));
-  }
-
-  .arcana-word {
-    color: #f0e9d9;
-    font-family: var(--font-serif);
-    font-size: 1.12rem;
-    font-weight: 650;
-    letter-spacing: .28em;
-    text-indent: .28em;
-  }
-
-  .arcana-caption {
-    color: #c6a15a;
-    font-size: .58rem;
-    letter-spacing: .2em;
-  }
-
-  .project-card--arcana .project-eyebrow,
-  .project-card--arcana .project-link { color: #c6a15a; }
-
-  .project-card--arcana .project-content h3 { color: #f0e9d9; }
-  .project-card--arcana .project-description { color: rgba(240, 233, 217, .68); }
-  .project-card--arcana .project-stack li {
-    border-color: rgba(198, 161, 90, .28);
-    color: #e7dcc5;
-    background: rgba(198, 161, 90, .045);
-  }
-
-  .project-card--seo .project-eyebrow,
-  .project-card--seo .project-link { color: #e8472a; }
-
-  .project-card--seo .project-content h3 { color: #fff; }
-  .project-card--seo .project-description { color: rgba(245, 240, 235, .68); }
-  .project-card--seo .project-stack li {
-    border-color: rgba(232, 71, 42, .28);
-    color: #f1d9d2;
-    background: rgba(232, 71, 42, .045);
-  }
-
-  .project-card--spacex .project-eyebrow,
-  .project-card--spacex .project-link { color: var(--color-cyan-400, oklch(78.9% .154 211.53)); }
-
-  .project-card--spacex .project-content h3 { color: #fff; }
-  .project-card--spacex .project-description { color: rgba(235, 240, 244, .62); }
-  .project-card--spacex .project-stack li {
-    border-color: rgba(34, 211, 238, .28);
-    color: #d8f1f5;
-    background: rgba(34, 211, 238, .045);
-  }
-
-  .project-content { padding: 26px 26px 28px; }
-  .project-eyebrow {
-    margin: 0 0 12px;
-    color: var(--color-accent);
-    font-size: .68rem;
-    font-weight: 700;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-  }
-
-  .project-content h3 {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: 1.7rem;
-    letter-spacing: -.05em;
-  }
-
-  .project-description {
-    min-height: 106px;
-    margin: 14px 0 20px;
-    color: var(--color-muted);
-    font-size: .9rem;
-    line-height: 1.75;
-  }
-
-  .project-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .project-stack li {
-    padding: 7px 10px;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    color: var(--color-text);
-    font-size: .68rem;
-  }
-
-  .project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 24px;
-    color: var(--color-accent);
-    font-size: .82rem;
-    font-weight: 650;
-    text-decoration: none;
-  }
-
-  .project-link span { font-size: 1rem; }
-
   @media (max-width: 800px) {
     .project-heading { gap: 28px; }
     .project-grid { gap: 12px; }
-    .project-content { padding: 22px 20px 24px; }
-    .project-description { min-height: 132px; }
   }
-
   @media (max-width: 600px) {
     .project-showcase { padding-block: 62px 76px; }
     .project-heading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 26px; }
     .project-heading h2 { font-size: clamp(2.6rem, 12vw, 3.6rem); }
     .project-grid { grid-template-columns: 1fr; gap: 14px; }
-    .project-visual { height: 250px; }
-    .project-description { min-height: 0; }
-    .arcana-art,
-    .seo-art,
-    .spacex-art { padding: 20px 18px; }
-    .arcana-brand img { width: 68px; height: 68px; }
-    .arcana-art-bottom,
-    .seo-art-bottom,
-    .spacex-art-bottom { font-size: .48rem; }
-    .seo-word { font-size: clamp(1.35rem, 7vw, 2rem); }
-    .seo-caption { font-size: .48rem; }
-    .spacex-word { font-size: clamp(2.5rem, 12vw, 4rem); }
-    .spacex-caption { font-size: .68rem; letter-spacing: .24em; }
-    .spacex-subcaption { font-size: .44rem; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .project-visual > img { transition: none; }
   }
 </style>
