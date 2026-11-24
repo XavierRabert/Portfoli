@@ -12,7 +12,7 @@ const links = [
 ];
 ---
 
-<nav class:list={["social-links", `social-links--${variant}`]} aria-label="Xarxes socials">
+<div class:list={["social-links", `social-links--${variant}`]} role="group" aria-label="Xarxes socials">
   {links.map((link) => (
     <a
       href={link.href}
@@ -27,4 +27,4 @@ const links = [
       {variant === "footer" && <span class="social-external" aria-hidden="true">↗</span>}
     </a>
   ))}
-</nav>
+</div>
