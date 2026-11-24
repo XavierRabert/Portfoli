@@ -1,0 +1,30 @@
+---
+import { icons } from "@/lib/Icons";
+
+interface Props {
+  variant: "header" | "footer";
+}
+
+const { variant } = Astro.props;
+const links = [
+  { label: "GitHub", href: "https://github.com/XavierRabert", icon: icons.github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/xavierrabert/", icon: icons.linkedin },
+];
+---
+
+<nav class:list={["social-links", `social-links--${variant}`]} aria-label="Xarxes socials">
+  {links.map((link) => (
+    <a
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${link.label} (s'obre en una pestanya nova)`}
+    >
+      <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+        <path d={link.icon} />
+      </svg>
+      {variant === "footer" && <span>{link.label}</span>}
+      {variant === "footer" && <span class="social-external" aria-hidden="true">↗</span>}
+    </a>
+  ))}
+</nav>
