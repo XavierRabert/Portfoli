@@ -257,44 +257,85 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .principles h3 { margin: 22px 0 8px; font-size: .98rem; }
 .principles p { margin: 0; color: var(--color-muted); font-size: .84rem; line-height: 1.65; }
 .site-footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .8fr);
   align-items: center;
-  gap: 32px;
-  padding-block: 34px 38px;
+  gap: clamp(36px, 7vw, 88px);
+  padding-block: 64px 42px;
   border-top: 1px solid var(--color-border);
 }
-.footer-copy p {
-  margin: 0 0 12px;
+.footer-copy {
+  max-width: 570px;
+}
+.footer-copy h2 {
+  max-width: 560px;
+  margin: 18px 0 14px;
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  letter-spacing: -.04em;
+  font-size: clamp(2rem, 3.8vw, 3.15rem);
+  font-weight: 600;
+  letter-spacing: -.065em;
+  line-height: 1.08;
+}
+.footer-description {
+  max-width: 450px;
+  margin: 0 0 34px;
+  color: var(--color-muted);
+  font-size: .94rem;
+  line-height: 1.75;
 }
 .footer-copy small { color: var(--color-muted); font-size: .7rem; }
-.footer-contact { display: flex; flex-direction: row; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 20px; }
+.footer-contact {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+}
 .footer-email {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 7px;
-  color: var(--color-muted);
-  font-size: .78rem;
+  gap: 14px;
+  padding: 4px 2px 20px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
   text-decoration: none;
   transition: color 160ms ease;
 }
 .footer-email:hover { color: var(--color-accent); }
-.footer-email svg { width: 17px; height: 17px; flex: 0 0 auto; fill: currentColor; }
-.footer-email .social-external { color: var(--color-accent); }
-.social-links--footer { display: flex; align-items: center; gap: 20px; }
+.footer-email-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-surface-raised);
+  color: var(--color-accent);
+}
+.footer-email-icon svg { width: 19px; height: 19px; fill: currentColor; }
+.footer-email-copy { display: grid; gap: 5px; }
+.footer-contact-label {
+  color: var(--color-muted);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.footer-email-address { font-size: 1rem; font-weight: 650; }
+.footer-email > .social-external { margin-left: auto; color: var(--color-accent); font-size: 1.1rem; }
+.footer-social { display: grid; gap: 14px; padding: 2px; }
+.social-links--footer { display: flex; align-items: center; gap: 22px; }
 .social-links--footer a {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   color: var(--color-muted);
-  font-size: .78rem;
+  font-size: .82rem;
   text-decoration: none;
   transition: color 160ms ease;
 }
 .social-links--footer a:hover { color: var(--color-accent); }
+.social-links--footer svg { width: 17px; height: 17px; fill: currentColor; }
 .social-links--footer a > .social-external { color: var(--color-accent); }
 
 @media (max-width: 800px) {
@@ -339,10 +380,11 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   .principles { grid-template-columns: 1fr; gap: 10px; padding-bottom: 68px; }
   .principles article { min-height: auto; padding: 20px; }
   .principles h3 { margin-top: 14px; }
-  .site-footer { align-items: flex-start; flex-direction: column; gap: 22px; padding-block: 26px 32px; }
-  .footer-copy p { font-size: 1.15rem; }
-  .footer-contact { align-items: center; justify-content: flex-start; gap: 14px 18px; }
-  .social-links--footer { gap: 18px; }
+  .site-footer { grid-template-columns: 1fr; gap: 28px; padding-block: 48px 32px; }
+  .footer-copy h2 { max-width: 460px; font-size: clamp(2rem, 9vw, 2.7rem); }
+  .footer-description { margin-bottom: 26px; }
+  .footer-contact { width: 100%; gap: 16px; padding: 18px; }
+  .social-links--footer { gap: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
