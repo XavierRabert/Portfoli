@@ -1,0 +1,102 @@
+<section id="expertise" class="expertise-section" aria-labelledby="expertise-title">
+  <div class="expertise-heading">
+    <div>
+      <p class="redesign-kicker">Tecnologies i especialització</p>
+      <h2 id="expertise-title">On poso el<br /><em>focus.</em></h2>
+    </div>
+    <p>
+      La meva especialitat és el frontend: construir interfícies sòlides,
+      cuidar-ne l'arquitectura i fer que siguin agradables d'utilitzar.
+    </p>
+  </div>
+
+  <div class="expertise-grid">
+    <article class="expertise-card">
+      <span class="expertise-index">01</span>
+      <h3>Frontend development</h3>
+      <p>Aplicacions web modernes, components reutilitzables i interfícies adaptables.</p>
+      <ul aria-label="Tecnologies frontend">
+        <li>Angular</li><li>TypeScript</li><li>JavaScript</li><li>HTML</li><li>CSS / SCSS</li>
+      </ul>
+    </article>
+
+    <article class="expertise-card">
+      <span class="expertise-index">02</span>
+      <h3>Arquitectura i qualitat</h3>
+      <p>Estructures clares i decisions tècniques pensades per facilitar l'evolució del producte.</p>
+      <ul aria-label="Eines i conceptes d'arquitectura">
+        <li>Angular Signals</li><li>RxJS</li><li>Standalone</li><li>Components reutilitzables</li><li>Git</li>
+      </ul>
+    </article>
+
+    <article class="expertise-card">
+      <span class="expertise-index">03</span>
+      <h3>Experiència d'usuari</h3>
+      <p>Detall visual, accessibilitat i rendiment al servei d'una experiència coherent.</p>
+      <ul aria-label="Àrees d'especialització">
+        <li>Responsive UI</li><li>Accessibilitat</li><li>Rendiment</li><li>Prototipació</li><li>Astro</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<style>
+  .expertise-section { padding-block: 84px 100px; border-top: 1px solid var(--color-border); }
+  .expertise-heading {
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 38px;
+  }
+  .expertise-heading h2 {
+    margin: 18px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+    letter-spacing: -.075em;
+    line-height: 1.04;
+  }
+  .expertise-heading h2 em { color: var(--color-accent); font-style: normal; }
+  .expertise-heading > p {
+    max-width: 460px;
+    margin: 0 0 5px;
+    color: var(--color-muted);
+    font-size: .96rem;
+    line-height: 1.8;
+  }
+  .expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .expertise-card {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-surface);
+  }
+  .expertise-index { color: var(--color-accent); font-size: .7rem; letter-spacing: .12em; }
+  .expertise-card h3 { margin: 24px 0 10px; font-size: 1.05rem; }
+  .expertise-card p { min-height: 76px; margin: 0; color: var(--color-muted); font-size: .84rem; line-height: 1.7; }
+  .expertise-card ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+  .expertise-card li {
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: .72rem;
+    line-height: 1.2;
+  }
+  @media (max-width: 800px) {
+    .expertise-heading { gap: 28px; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .expertise-card:last-child { grid-column: 1 / -1; }
+    .expertise-card p { min-height: 0; }
+  }
+  @media (max-width: 600px) {
+    .expertise-section { padding-block: 64px 72px; }
+    .expertise-heading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 26px; }
+    .expertise-heading h2 { font-size: clamp(2.7rem, 12vw, 3.7rem); }
+    .expertise-grid { grid-template-columns: 1fr; gap: 10px; }
+    .expertise-card:last-child { grid-column: auto; }
+    .expertise-card { padding: 21px; }
+    .expertise-card h3 { margin-top: 16px; }
+  }
+</style>
