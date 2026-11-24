@@ -3,11 +3,12 @@ const projects = [
   {
     number: "01",
     name: "Arcana",
-    eyebrow: "Aplicació personal · En evolució",
+    eyebrow: "Producte personal · Desenvolupament pausat",
     description:
-      "Una eina per gestionar col·leccions i construir maços de Magic: The Gathering. Un projecte de llarg recorregut on treballo arquitectura frontend, persistència de dades i experiència d'usuari.",
-    stack: ["Angular 21", "TypeScript", "Supabase"],
+      "Una aplicació completa per gestionar col·leccions i maços Commander de Magic: The Gathering. Inclou inventari de cartes, wishlist, sincronització, anàlisi de maços i una interfície pròpia.",
+    stack: ["Angular 21", "TypeScript", "Signals", "Tailwind CSS 4", "Supabase", "Scryfall"],
     kind: "arcana",
+    href: "https://arcana.xavierrabert.com",
   },
   {
     number: "02",
@@ -48,12 +49,26 @@ const projects = [
             />
           ) : (
             <div class="arcana-art" aria-label="Identitat visual del projecte Arcana">
-              <span class="arcana-orbit arcana-orbit--one"></span>
-              <span class="arcana-orbit arcana-orbit--two"></span>
-              <span class="arcana-mark">A</span>
-              <span class="arcana-word">ARCANA</span>
-              <span class="arcana-caption">COMMANDER COMPANION</span>
-              <span class="arcana-index">01 / PERSONAL PROJECT</span>
+              <div class="arcana-art-top">
+                <span>PERSONAL PROJECT</span>
+                <span>01 / 02</span>
+              </div>
+              <div class="arcana-brand">
+                <img
+                  src="https://arcana.xavierrabert.com/assets/arcana-mark.svg"
+                  alt="Símbol d'Arcana"
+                  width="76"
+                  height="76"
+                  loading="lazy"
+                />
+                <span class="arcana-word">MTG ARCANA</span>
+                <span class="arcana-caption">COMMANDER COMPANION</span>
+              </div>
+              <div class="arcana-art-bottom">
+                <span>DECKS</span>
+                <span>COLLECTION</span>
+                <span>DECK ADVISOR</span>
+              </div>
             </div>
           )}
           <span class="project-number">{project.number}</span>
@@ -168,57 +183,74 @@ const projects = [
 
   .arcana-art {
     position: relative;
-    display: grid;
+    display: flex;
     width: 100%;
     height: 100%;
-    place-content: center;
-    justify-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
+    padding: 24px 28px;
     background:
-      radial-gradient(ellipse at 50% 50%, rgba(194, 249, 112, .13), transparent 48%),
-      linear-gradient(145deg, #242b29, #111516 72%);
+      radial-gradient(ellipse at 50% 48%, rgba(213, 168, 78, .17), transparent 46%),
+      linear-gradient(145deg, #24221b, #111312 72%);
   }
 
-  .arcana-orbit {
+  .arcana-art::before,
+  .arcana-art::after {
     position: absolute;
-    width: 230px;
+    top: 50%;
+    left: 50%;
+    width: 220px;
     aspect-ratio: 1;
-    border: 1px solid rgba(194, 249, 112, .2);
+    border: 1px solid rgba(213, 168, 78, .2);
     border-radius: 50%;
+    content: "";
+    transform: translate(-50%, -50%);
   }
 
-  .arcana-orbit--one { transform: scaleX(1.55) rotate(-35deg); }
-  .arcana-orbit--two { transform: scaleX(1.55) rotate(35deg); }
+  .arcana-art::after {
+    width: 280px;
+    border-color: rgba(213, 168, 78, .1);
+  }
 
-  .arcana-mark {
+  .arcana-art-top,
+  .arcana-art-bottom {
     z-index: 1;
-    color: var(--color-accent);
-    font-family: var(--font-display);
-    font-size: clamp(5rem, 11vw, 8.5rem);
-    font-weight: 600;
-    line-height: .9;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(240, 233, 217, .52);
+    font-size: .58rem;
+    letter-spacing: .16em;
+  }
+
+  .arcana-brand {
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .arcana-brand img {
+    width: 76px;
+    height: 76px;
+    filter: drop-shadow(0 8px 24px rgba(213, 168, 78, .2));
   }
 
   .arcana-word {
-    z-index: 1;
-    margin-top: 18px;
-    color: var(--color-text);
+    color: #f0e9d9;
     font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: .38em;
-    text-indent: .38em;
+    font-size: 1.12rem;
+    font-weight: 650;
+    letter-spacing: .28em;
+    text-indent: .28em;
   }
 
-  .arcana-caption, .arcana-index {
-    position: absolute;
-    color: rgba(240, 240, 236, .48);
+  .arcana-caption {
+    color: #c6a15a;
     font-size: .58rem;
-    letter-spacing: .18em;
+    letter-spacing: .2em;
   }
-
-  .arcana-caption { bottom: 24px; }
-  .arcana-index { top: 24px; left: 24px; }
 
   .project-content { padding: 26px 26px 28px; }
   .project-eyebrow {
@@ -289,7 +321,9 @@ const projects = [
     .project-grid { grid-template-columns: 1fr; gap: 14px; }
     .project-visual { height: 250px; }
     .project-description { min-height: 0; }
-    .arcana-mark { font-size: 7rem; }
+    .arcana-art { padding: 20px 18px; }
+    .arcana-brand img { width: 68px; height: 68px; }
+    .arcana-art-bottom { font-size: .5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
