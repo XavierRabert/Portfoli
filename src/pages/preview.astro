@@ -90,19 +90,32 @@ import { icons } from "@/lib/Icons";
       <ExpertiseSection />
     </main>
 
-    <footer id="contact" class="site-footer">
+    <footer id="contact" class="site-footer" aria-labelledby="contact-title">
       <div class="footer-copy">
-        <p>Hi ha alguna cosa interessant entre mans?</p>
+        <p class="redesign-kicker">Parlem?</p>
+        <h2 id="contact-title">Tens un projecte o una oportunitat interessant?</h2>
+        <p class="footer-description">
+          M'agradaria saber-ne més. Si creus que podem fer alguna cosa plegats, escriu-me.
+        </p>
         <small>© {new Date().getFullYear()} Xavier Rabert</small>
       </div>
       <div class="footer-contact">
         <a class="footer-email" href="mailto:xrabert@gmail.com">
-          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-            <path d={icons.gmail} />
-          </svg>
-          <span>xrabert@gmail.com</span> <span class="social-external" aria-hidden="true">↗</span>
+          <span class="footer-email-icon">
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+              <path d={icons.gmail} />
+            </svg>
+          </span>
+          <span class="footer-email-copy">
+            <span class="footer-contact-label">Escriu-me</span>
+            <span class="footer-email-address">xrabert@gmail.com</span>
+          </span>
+          <span class="social-external" aria-hidden="true">↗</span>
         </a>
-        <SocialLinks variant="footer" />
+        <div class="footer-social">
+          <span class="footer-contact-label">També em pots trobar a</span>
+          <SocialLinks variant="footer" />
+        </div>
       </div>
     </footer>
   </div>
