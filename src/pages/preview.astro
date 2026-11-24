@@ -2,6 +2,8 @@
 import RedesignLayout from "@/layouts/RedesignLayout.astro";
 import BrandLogo from "@/components/brand/BrandLogo.astro";
 import ProjectShowcase from "@/components/ProjectShowcase.astro";
+import AboutSection from "@/components/redesign/AboutSection.astro";
+import ExpertiseSection from "@/components/redesign/ExpertiseSection.astro";
 ---
 
 <RedesignLayout
@@ -27,6 +29,7 @@ import ProjectShowcase from "@/components/ProjectShowcase.astro";
         <nav aria-label="Navegació mòbil">
           <a href="#projects">Projectes</a>
           <a href="#about">Sobre mi</a>
+          <a href="#expertise">Especialització</a>
           <a href="#contact">Contacte</a>
           <div class="language-switch">
             <a class="is-active" href="/preview" lang="ca" aria-current="page">CA</a>
@@ -78,11 +81,8 @@ import ProjectShowcase from "@/components/ProjectShowcase.astro";
 
       <ProjectShowcase />
 
-      <section id="about" class="principles" aria-label="Principis de treball">
-        <article><span>01</span><h3>Bon criteri tècnic</h3><p>Arquitectura clara, codi mantenible i decisions amb sentit.</p></article>
-        <article><span>02</span><h3>Experiència d'usuari</h3><p>Interfícies cuidades, accessibles i agradables d'utilitzar.</p></article>
-        <article><span>03</span><h3>Aprendre construint</h3><p>Experimentar, prototipar i fer que les idees passin coses.</p></article>
-      </section>
+      <AboutSection />
+      <ExpertiseSection />
     </main>
 
     <footer id="contact" class="site-footer">
