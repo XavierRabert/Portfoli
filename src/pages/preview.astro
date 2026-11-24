@@ -4,6 +4,8 @@ import BrandLogo from "@/components/brand/BrandLogo.astro";
 import ProjectShowcase from "@/components/ProjectShowcase.astro";
 import AboutSection from "@/components/redesign/AboutSection.astro";
 import ExpertiseSection from "@/components/redesign/ExpertiseSection.astro";
+import SocialLinks from "@/components/redesign/SocialLinks.astro";
+import { icons } from "@/lib/Icons";
 ---
 
 <RedesignLayout
@@ -18,6 +20,7 @@ import ExpertiseSection from "@/components/redesign/ExpertiseSection.astro";
         <a href="#about">Sobre mi</a>
         <a href="#expertise">Especialització</a>
         <a href="#contact">Contacte</a>
+        <SocialLinks variant="header" />
         <div class="language-switch" aria-label="Idioma">
           <a class="is-active" href="/preview" lang="ca" aria-current="page">CA</a>
           <a href="/es/" lang="es">ES</a>
@@ -32,6 +35,7 @@ import ExpertiseSection from "@/components/redesign/ExpertiseSection.astro";
           <a href="#about">Sobre mi</a>
           <a href="#expertise">Especialització</a>
           <a href="#contact">Contacte</a>
+          <SocialLinks variant="header" />
           <div class="language-switch">
             <a class="is-active" href="/preview" lang="ca" aria-current="page">CA</a>
             <a href="/es/" lang="es">ES</a>
@@ -87,12 +91,32 @@ import ExpertiseSection from "@/components/redesign/ExpertiseSection.astro";
     </main>
 
     <footer id="contact" class="site-footer">
-      <p>Hi ha alguna cosa interessant entre mans?</p>
-      <a href="mailto:xrabert@gmail.com">Parlem-ne <span aria-hidden="true">↗</span></a>
-      <small>© {new Date().getFullYear()} Xavier Rabert</small>
+      <div class="footer-copy">
+        <p>Hi ha alguna cosa interessant entre mans?</p>
+        <small>© {new Date().getFullYear()} Xavier Rabert</small>
+      </div>
+      <div class="footer-contact">
+        <a class="footer-email" href="mailto:xrabert@gmail.com">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d={icons.gmail} />
+          </svg>
+          <span>xrabert@gmail.com</span> <span class="social-external" aria-hidden="true">↗</span>
+        </a>
+        <SocialLinks variant="footer" />
+      </div>
     </footer>
   </div>
 </RedesignLayout>
+
+<script>
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  mobileMenu?.querySelectorAll("nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.removeAttribute("open");
+    });
+  });
+</script>
 
 <style>
   .hero-name-accent {
