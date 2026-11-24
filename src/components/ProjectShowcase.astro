@@ -20,6 +20,16 @@ const projects = [
     kind: "seo",
     href: "https://www.seoambtalons.cat",
   },
+  {
+    number: "03",
+    name: "SpaceX Mission Control",
+    eyebrow: "Projecte personal · Aplicació publicada",
+    description:
+      "Un dashboard espacial desenvolupat amb Angular per explorar llançaments, coets i missions. Integració amb Launch Library 2, adaptació de dades externes, gestió d'errors i una capa de caché a Netlify per fer el servei més robust.",
+    stack: ["Angular", "TypeScript", "API REST", "Netlify Functions", "CDN Cache"],
+    kind: "spacex",
+    href: "https://landing-space-x.netlify.app/",
+  },
 ];
 ---
 
@@ -39,7 +49,26 @@ const projects = [
     {projects.map((project) => (
       <article class:list={["project-card", `project-card--${project.kind}`]}>
         <div class="project-visual">
-          {project.kind === "seo" ? (
+          {project.kind === "spacex" ? (
+            <div class="spacex-art" aria-label="Identitat visual de SpaceX Mission Control">
+              <div class="spacex-art-top">
+                <span>SPACEX</span>
+                
+              </div>
+              <div class="spacex-orbit spacex-orbit--one"></div>
+              <div class="spacex-orbit spacex-orbit--two"></div>
+              <div class="spacex-brand">
+                <span class="spacex-word">SPACE <span>X</span></span>
+                <span class="spacex-caption">MISSION CONTROL</span>
+                <span class="spacex-subcaption">FLIGHT DATA · LAUNCH SYSTEMS</span>
+              </div>
+              <div class="spacex-art-bottom">
+                <span>01 / LAUNCHES</span>
+                <span>02 / VEHICLES</span>
+                <span>03 / MISSIONS</span>
+              </div>
+            </div>
+          ) : project.kind === "seo" ? (
             <div class="seo-art" aria-label="Logotip de SEO amb Talons">
               <div class="seo-art-top">
                 <span>WEB PROFESSIONAL</span>
@@ -165,6 +194,97 @@ const projects = [
     object-fit: cover;
     object-position: top center;
     transition: transform 500ms ease;
+  }
+
+  .spacex-art {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 24px 28px;
+    background:
+      radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, .075), transparent 42%),
+      linear-gradient(145deg, #101214, #030405 72%);
+    color: #f5f7f8;
+  }
+
+  .spacex-art::before {
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    content: "";
+    pointer-events: none;
+  }
+
+  .spacex-art-top,
+  .spacex-art-bottom {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(255, 255, 255, .48);
+    font-size: .56rem;
+    letter-spacing: .17em;
+  }
+
+  .spacex-brand {
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .spacex-word {
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+  }
+
+  .spacex-word span {
+    color: var(--color-cyan-400, oklch(78.9% .154 211.53));
+    -webkit-text-fill-color: var(--color-cyan-400, oklch(78.9% .154 211.53));
+  }
+
+  .spacex-word {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 800;
+    letter-spacing: -.095em;
+    line-height: .9;
+  }
+
+  .spacex-caption {
+    color: #f5f7f8;
+    font-size: clamp(.72rem, 1.2vw, .9rem);
+    font-weight: 600;
+    letter-spacing: .34em;
+  }
+
+  .spacex-subcaption {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, .46);
+    font-size: .52rem;
+    letter-spacing: .2em;
+  }
+
+  .spacex-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(66%, 420px);
+    aspect-ratio: 2.5;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    pointer-events: none;
+  }
+
+  .spacex-orbit--two {
+    width: min(76%, 500px);
+    border-color: rgba(255, 255, 255, .07);
+    transform: translate(-50%, -50%) rotate(18deg);
   }
 
   .project-card:hover .project-visual > img {
@@ -293,7 +413,7 @@ const projects = [
 
   .arcana-word {
     color: #f0e9d9;
-    font-family: var(--font-display);
+    font-family: var(--font-serif);
     font-size: 1.12rem;
     font-weight: 650;
     letter-spacing: .28em;
@@ -304,6 +424,39 @@ const projects = [
     color: #c6a15a;
     font-size: .58rem;
     letter-spacing: .2em;
+  }
+
+  .project-card--arcana .project-eyebrow,
+  .project-card--arcana .project-link { color: #c6a15a; }
+
+  .project-card--arcana .project-content h3 { color: #f0e9d9; }
+  .project-card--arcana .project-description { color: rgba(240, 233, 217, .68); }
+  .project-card--arcana .project-stack li {
+    border-color: rgba(198, 161, 90, .28);
+    color: #e7dcc5;
+    background: rgba(198, 161, 90, .045);
+  }
+
+  .project-card--seo .project-eyebrow,
+  .project-card--seo .project-link { color: #e8472a; }
+
+  .project-card--seo .project-content h3 { color: #fff; }
+  .project-card--seo .project-description { color: rgba(245, 240, 235, .68); }
+  .project-card--seo .project-stack li {
+    border-color: rgba(232, 71, 42, .28);
+    color: #f1d9d2;
+    background: rgba(232, 71, 42, .045);
+  }
+
+  .project-card--spacex .project-eyebrow,
+  .project-card--spacex .project-link { color: var(--color-cyan-400, oklch(78.9% .154 211.53)); }
+
+  .project-card--spacex .project-content h3 { color: #fff; }
+  .project-card--spacex .project-description { color: rgba(235, 240, 244, .62); }
+  .project-card--spacex .project-stack li {
+    border-color: rgba(34, 211, 238, .28);
+    color: #d8f1f5;
+    background: rgba(34, 211, 238, .045);
   }
 
   .project-content { padding: 26px 26px 28px; }
@@ -376,12 +529,17 @@ const projects = [
     .project-visual { height: 250px; }
     .project-description { min-height: 0; }
     .arcana-art,
-    .seo-art { padding: 20px 18px; }
+    .seo-art,
+    .spacex-art { padding: 20px 18px; }
     .arcana-brand img { width: 68px; height: 68px; }
     .arcana-art-bottom,
-    .seo-art-bottom { font-size: .5rem; }
+    .seo-art-bottom,
+    .spacex-art-bottom { font-size: .48rem; }
     .seo-word { font-size: clamp(1.35rem, 7vw, 2rem); }
     .seo-caption { font-size: .48rem; }
+    .spacex-word { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .spacex-caption { font-size: .68rem; letter-spacing: .24em; }
+    .spacex-subcaption { font-size: .44rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
