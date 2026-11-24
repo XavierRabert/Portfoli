@@ -1,0 +1,298 @@
+---
+const projects = [
+  {
+    number: "01",
+    name: "Arcana",
+    eyebrow: "Aplicació personal · En evolució",
+    description:
+      "Una eina per gestionar col·leccions i construir maços de Magic: The Gathering. Un projecte de llarg recorregut on treballo arquitectura frontend, persistència de dades i experiència d'usuari.",
+    stack: ["Angular 21", "TypeScript", "Supabase"],
+    kind: "arcana",
+  },
+  {
+    number: "02",
+    name: "SEO amb Talons",
+    eyebrow: "Web professional · Publicada",
+    description:
+      "Desenvolupament de la web de la consultoria SEO de Laia Xarau. M'he encarregat de construir el producte web i les seves integracions, amb una arquitectura basada en Astro i contingut gestionat amb Sanity.",
+    stack: ["Astro 6", "Tailwind CSS 4", "React", "Sanity"],
+    kind: "seo",
+    href: "https://www.seoambtalons.cat",
+  },
+];
+---
+
+<section id="projects" class="project-showcase" aria-labelledby="projects-title">
+  <div class="project-heading">
+    <div>
+      <p class="redesign-kicker">Projectes seleccionats</p>
+      <h2 id="projects-title">Idees que es<br /><em>converteixen en producte.</em></h2>
+    </div>
+    <p class="project-heading-copy">
+      Projectes propis i col·laboracions on el desenvolupament, el criteri tècnic
+      i l'experiència d'usuari van de la mà.
+    </p>
+  </div>
+
+  <div class="project-grid">
+    {projects.map((project) => (
+      <article class:list={["project-card", `project-card--${project.kind}`]}>
+        <div class="project-visual">
+          {project.kind === "seo" ? (
+            <img
+              src="/projecte5.webp"
+              alt="Captura de la web de SEO amb Talons"
+              loading="lazy"
+              width="1200"
+              height="800"
+            />
+          ) : (
+            <div class="arcana-art" aria-label="Identitat visual del projecte Arcana">
+              <span class="arcana-orbit arcana-orbit--one"></span>
+              <span class="arcana-orbit arcana-orbit--two"></span>
+              <span class="arcana-mark">A</span>
+              <span class="arcana-word">ARCANA</span>
+              <span class="arcana-caption">COMMANDER COMPANION</span>
+              <span class="arcana-index">01 / PERSONAL PROJECT</span>
+            </div>
+          )}
+          <span class="project-number">{project.number}</span>
+        </div>
+
+        <div class="project-content">
+          <p class="project-eyebrow">{project.eyebrow}</p>
+          <h3>{project.name}</h3>
+          <p class="project-description">{project.description}</p>
+          <ul class="project-stack" aria-label="Tecnologies">
+            {project.stack.map((technology) => <li>{technology}</li>)}
+          </ul>
+          {project.href && (
+            <a
+              class="project-link"
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visitar el projecte <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .project-showcase {
+    padding-block: 88px 104px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .project-heading {
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 38px;
+  }
+
+  .project-heading h2 {
+    margin: 18px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+    letter-spacing: -.075em;
+    line-height: 1.04;
+  }
+
+  .project-heading h2 em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+
+  .project-heading-copy {
+    max-width: 460px;
+    margin: 0 0 5px;
+    color: var(--color-muted);
+    font-size: .96rem;
+    line-height: 1.8;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .project-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: var(--color-surface);
+  }
+
+  .project-visual {
+    position: relative;
+    height: clamp(220px, 27vw, 340px);
+    overflow: hidden;
+    background: #171c1c;
+  }
+
+  .project-visual > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 500ms ease;
+  }
+
+  .project-card:hover .project-visual > img {
+    transform: scale(1.035);
+  }
+
+  .project-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid rgba(240, 240, 236, .24);
+    border-radius: 50%;
+    background: rgba(17, 19, 21, .72);
+    color: var(--color-text);
+    font-size: .68rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .arcana-art {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    justify-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(194, 249, 112, .13), transparent 48%),
+      linear-gradient(145deg, #242b29, #111516 72%);
+  }
+
+  .arcana-orbit {
+    position: absolute;
+    width: 230px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(194, 249, 112, .2);
+    border-radius: 50%;
+  }
+
+  .arcana-orbit--one { transform: scaleX(1.55) rotate(-35deg); }
+  .arcana-orbit--two { transform: scaleX(1.55) rotate(35deg); }
+
+  .arcana-mark {
+    z-index: 1;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 11vw, 8.5rem);
+    font-weight: 600;
+    line-height: .9;
+  }
+
+  .arcana-word {
+    z-index: 1;
+    margin-top: 18px;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: .38em;
+    text-indent: .38em;
+  }
+
+  .arcana-caption, .arcana-index {
+    position: absolute;
+    color: rgba(240, 240, 236, .48);
+    font-size: .58rem;
+    letter-spacing: .18em;
+  }
+
+  .arcana-caption { bottom: 24px; }
+  .arcana-index { top: 24px; left: 24px; }
+
+  .project-content { padding: 26px 26px 28px; }
+  .project-eyebrow {
+    margin: 0 0 12px;
+    color: var(--color-accent);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+
+  .project-content h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    letter-spacing: -.05em;
+  }
+
+  .project-description {
+    min-height: 106px;
+    margin: 14px 0 20px;
+    color: var(--color-muted);
+    font-size: .9rem;
+    line-height: 1.75;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .project-stack li {
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: .68rem;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    color: var(--color-accent);
+    font-size: .82rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .project-link span { font-size: 1rem; }
+
+  @media (max-width: 800px) {
+    .project-heading { gap: 28px; }
+    .project-grid { gap: 12px; }
+    .project-content { padding: 22px 20px 24px; }
+    .project-description { min-height: 132px; }
+  }
+
+  @media (max-width: 600px) {
+    .project-showcase { padding-block: 62px 76px; }
+    .project-heading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 26px; }
+    .project-heading h2 { font-size: clamp(2.6rem, 12vw, 3.6rem); }
+    .project-grid { grid-template-columns: 1fr; gap: 14px; }
+    .project-visual { height: 250px; }
+    .project-description { min-height: 0; }
+    .arcana-mark { font-size: 7rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-visual > img { transition: none; }
+  }
+</style>
