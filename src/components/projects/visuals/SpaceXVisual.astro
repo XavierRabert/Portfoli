@@ -1,0 +1,81 @@
+<div class="spacex-art" aria-label="Identitat visual de SpaceX Mission Control">
+  <div class="art-top"><span>SPACEX</span></div>
+  <div class="orbit orbit--one"></div>
+  <div class="orbit orbit--two"></div>
+  <div class="brand">
+    <span class="word">SPACE <span>X</span></span>
+    <span class="caption">MISSION CONTROL</span>
+    <span class="subcaption">FLIGHT DATA · LAUNCH SYSTEMS</span>
+  </div>
+  <div class="art-bottom">
+    <span>01 / LAUNCHES</span><span>02 / VEHICLES</span><span>03 / MISSIONS</span>
+  </div>
+</div>
+
+<style>
+  .spacex-art {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 24px 28px;
+    background:
+      radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, .075), transparent 42%),
+      linear-gradient(145deg, #101214, #030405 72%);
+    color: #f5f7f8;
+  }
+  .spacex-art::before {
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    content: "";
+    pointer-events: none;
+  }
+  .art-top, .art-bottom {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(255, 255, 255, .48);
+    font-size: .56rem;
+    letter-spacing: .17em;
+  }
+  .brand { z-index: 2; display: grid; justify-items: center; gap: 10px; }
+  .word {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 800;
+    letter-spacing: -.095em;
+    line-height: .9;
+    -webkit-text-fill-color: #fff;
+  }
+  .word span {
+    color: var(--color-cyan-400, oklch(78.9% .154 211.53));
+    -webkit-text-fill-color: var(--color-cyan-400, oklch(78.9% .154 211.53));
+  }
+  .caption { color: #f5f7f8; font-size: clamp(.72rem, 1.2vw, .9rem); font-weight: 600; letter-spacing: .34em; }
+  .subcaption { margin-top: 4px; color: rgba(255, 255, 255, .46); font-size: .52rem; letter-spacing: .2em; }
+  .orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(66%, 420px);
+    aspect-ratio: 2.5;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    pointer-events: none;
+  }
+  .orbit--two { width: min(76%, 500px); border-color: rgba(255, 255, 255, .07); transform: translate(-50%, -50%) rotate(18deg); }
+  @media (max-width: 600px) {
+    .spacex-art { padding: 20px 18px; }
+    .art-bottom { font-size: .48rem; }
+    .word { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .caption { font-size: .68rem; letter-spacing: .24em; }
+    .subcaption { font-size: .44rem; }
+  }
+</style>
