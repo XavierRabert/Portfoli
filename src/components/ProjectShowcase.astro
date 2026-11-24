@@ -50,14 +50,23 @@ const projects = [
       <article class:list={["project-card", `project-card--${project.kind}`]}>
         <div class="project-visual">
           {project.kind === "spacex" ? (
-            <div class="spacex-art" aria-label="SpaceX Mission Control, plataforma de seguiment de llançaments espacials">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Falcon_9_Flight_1.jpg"
-                alt="Coet Falcon 9 de SpaceX enlairant-se des de la plataforma de llançament"
-                width="1600"
-                height="900"
-                loading="lazy"
-              />
+            <div class="spacex-art" aria-label="Identitat visual de SpaceX Mission Control">
+              <div class="spacex-art-top">
+                <span>SPACEX</span>
+                <span>MISSION OPERATIONS</span>
+              </div>
+              <div class="spacex-orbit spacex-orbit--one"></div>
+              <div class="spacex-orbit spacex-orbit--two"></div>
+              <div class="spacex-brand">
+                <span class="spacex-word">SPACEX</span>
+                <span class="spacex-caption">MISSION CONTROL</span>
+                <span class="spacex-subcaption">FLIGHT DATA · LAUNCH SYSTEMS</span>
+              </div>
+              <div class="spacex-art-bottom">
+                <span>01 / LAUNCHES</span>
+                <span>02 / VEHICLES</span>
+                <span>03 / MISSIONS</span>
+              </div>
             </div>
           ) : project.kind === "seo" ? (
             <div class="seo-art" aria-label="Logotip de SEO amb Talons">
@@ -188,18 +197,85 @@ const projects = [
   }
 
   .spacex-art {
+    position: relative;
+    display: flex;
     width: 100%;
     height: 100%;
-    background: #08090a;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 24px 28px;
+    background:
+      radial-gradient(ellipse at 50% 52%, rgba(255, 255, 255, .075), transparent 42%),
+      linear-gradient(145deg, #101214, #030405 72%);
+    color: #f5f7f8;
   }
 
-  .spacex-art img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 500ms ease;
+  .spacex-art::before {
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255, 255, 255, .09);
+    content: "";
+    pointer-events: none;
+  }
+
+  .spacex-art-top,
+  .spacex-art-bottom {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(235, 240, 244, .48);
+    font-size: .56rem;
+    letter-spacing: .17em;
+  }
+
+  .spacex-brand {
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .spacex-word {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2.7rem, 6vw, 5.2rem);
+    font-weight: 800;
+    letter-spacing: -.095em;
+    line-height: .9;
+  }
+
+  .spacex-caption {
+    color: #f5f7f8;
+    font-size: clamp(.72rem, 1.2vw, .9rem);
+    font-weight: 600;
+    letter-spacing: .34em;
+  }
+
+  .spacex-subcaption {
+    margin-top: 4px;
+    color: rgba(235, 240, 244, .46);
+    font-size: .52rem;
+    letter-spacing: .2em;
+  }
+
+  .spacex-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(66%, 420px);
+    aspect-ratio: 2.5;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    pointer-events: none;
+  }
+
+  .spacex-orbit--two {
+    width: min(76%, 500px);
+    border-color: rgba(255, 255, 255, .055);
+    transform: translate(-50%, -50%) rotate(18deg);
   }
 
   .project-card:hover .project-visual > img {
@@ -341,6 +417,28 @@ const projects = [
     letter-spacing: .2em;
   }
 
+  .project-card--arcana .project-eyebrow,
+  .project-card--arcana .project-link { color: #c6a15a; }
+
+  .project-card--arcana .project-content h3 { color: #f0e9d9; }
+  .project-card--arcana .project-description { color: rgba(240, 233, 217, .68); }
+  .project-card--arcana .project-stack li {
+    border-color: rgba(198, 161, 90, .28);
+    color: #e7dcc5;
+    background: rgba(198, 161, 90, .045);
+  }
+
+  .project-card--spacex .project-eyebrow,
+  .project-card--spacex .project-link { color: #f5f7f8; }
+
+  .project-card--spacex .project-content h3 { color: #fff; }
+  .project-card--spacex .project-description { color: rgba(235, 240, 244, .62); }
+  .project-card--spacex .project-stack li {
+    border-color: rgba(235, 240, 244, .2);
+    color: #e8ecef;
+    background: rgba(255, 255, 255, .025);
+  }
+
   .project-content { padding: 26px 26px 28px; }
   .project-eyebrow {
     margin: 0 0 12px;
@@ -411,12 +509,17 @@ const projects = [
     .project-visual { height: 250px; }
     .project-description { min-height: 0; }
     .arcana-art,
-    .seo-art { padding: 20px 18px; }
+    .seo-art,
+    .spacex-art { padding: 20px 18px; }
     .arcana-brand img { width: 68px; height: 68px; }
     .arcana-art-bottom,
-    .seo-art-bottom { font-size: .5rem; }
+    .seo-art-bottom,
+    .spacex-art-bottom { font-size: .48rem; }
     .seo-word { font-size: clamp(1.35rem, 7vw, 2rem); }
     .seo-caption { font-size: .48rem; }
+    .spacex-word { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .spacex-caption { font-size: .68rem; letter-spacing: .24em; }
+    .spacex-subcaption { font-size: .44rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
