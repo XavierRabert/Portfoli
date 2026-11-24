@@ -1,0 +1,57 @@
+---
+interface Props {
+  href?: string;
+}
+
+const { href = "/preview" } = Astro.props;
+---
+
+<a class="brand-logo" href={href} aria-label="Xavier Rabert — inici">
+  <img
+    class="brand-mark-svg"
+    src="/brand/xr-monogram.svg"
+    alt=""
+    width="240"
+    height="100"
+    fetchpriority="high"
+  />
+  <span class="brand-name" aria-hidden="true">
+    <span>XAVIER</span>
+    <span>RABERT</span>
+  </span>
+</a>
+
+<style>
+  .brand-mark-svg {
+    display: block;
+    width: 110px;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .brand-name {
+    display: grid;
+    gap: 5px;
+    color: #f0f0ec;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.34em;
+    line-height: 1.2;
+  }
+
+  .brand-name span:last-child {
+    color: #c2f970;
+  }
+
+  @media (max-width: 600px) {
+    .brand-mark-svg {
+      width: 88px;
+    }
+
+    .brand-name {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+    }
+  }
+</style>
