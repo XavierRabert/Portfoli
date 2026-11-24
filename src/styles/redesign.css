@@ -286,6 +286,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
   transition: background 160ms ease, color 160ms ease;
 }
 .footer-email:hover { background: var(--color-accent); color: var(--color-bg); }
+.footer-email svg { width: 16px; height: 16px; flex: 0 0 auto; fill: currentColor; }
 .social-links--footer { display: flex; align-items: center; gap: 20px; }
 .social-links--footer a {
   display: inline-flex;
