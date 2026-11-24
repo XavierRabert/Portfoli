@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="XR">
   <rect width="64" height="64" rx="14" fill="#111315"/>
-  <g transform="translate(8 15) scale(.14)">
-    <path d="M0 0h48l122 180h-48L0 0Z" fill="#F0F0EC"/>
-    <path d="M170 0h48L96 180H48L170 0Z" fill="#F0F0EC"/>
-    <path fill="#C2F970" fill-rule="evenodd" d="M132 0h114c59 0 90 29 90 76 0 38-23 61-61 70l65 34h-65l-63-35h-34l-46-46V0Zm49 35v75h64c23 0 35-13 35-38s-12-37-35-37h-64Z" clip-rule="evenodd"/>
+  <g transform="translate(4 20.5) scale(.2333333)">
+    <defs>
+      <linearGradient id="white" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffffff"/>
+        <stop offset="1" stop-color="#f2f2f2"/>
+      </linearGradient>
+      <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#caff00"/>
+        <stop offset="1" stop-color="#a8f000"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#lime)" d="M104 14H169c21 0 34 12 34 29 0 18-12 29-31 30l32 14h-38l-46-35h46c9 0 14-3 14-10 0-6-5-9-14-9h-79z"/>
+    <path fill="url(#white)" d="M21 14H55L93.11 51.09L75.45 67Z"/>
+    <path fill="url(#white)" d="M77.05 68.56L94.71 52.65L132 87H96Z"/>
+    <path fill="url(#white)" d="M99 14h34L54 87H18z"/>
   </g>
 </svg>
