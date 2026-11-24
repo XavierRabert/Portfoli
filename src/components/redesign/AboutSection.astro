@@ -1,0 +1,57 @@
+<section id="about" class="about-section" aria-labelledby="about-title">
+  <div class="about-heading">
+    <p class="redesign-kicker">Sobre mi</p>
+    <h2 id="about-title">Una trajectòria entre<br /><em>tecnologia i producte.</em></h2>
+  </div>
+
+  <div class="about-copy">
+    <p class="about-lead">
+      Fa més de vint anys que treballo amb programari. Vaig començar en el món
+      de l'automatització industrial i els sistemes de gestió, on vaig aprendre
+      a entendre processos complexos i a convertir necessitats reals en solucions.
+    </p>
+    <p>
+      Amb el temps, aquesta experiència m'ha portat al desenvolupament web,
+      on avui em centro en crear aplicacions frontend amb Angular i TypeScript.
+      M'agrada combinar el criteri tècnic amb una bona experiència d'usuari:
+      entendre el problema abans de programar i buscar solucions clares,
+      consistents i fàcils de mantenir.
+    </p>
+    <p>
+      Continuo explorant noves maneres de construir millor: des de l'arquitectura
+      i la qualitat del codi fins a la prototipació i les eines que ajuden a
+      treballar de manera més eficient.
+    </p>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(36px, 7vw, 92px);
+    padding-block: 88px 96px;
+    border-top: 1px solid var(--color-border);
+  }
+  .about-heading h2 {
+    margin: 18px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+    letter-spacing: -.075em;
+    line-height: 1.04;
+  }
+  .about-heading h2 em { color: var(--color-accent); font-style: normal; }
+  .about-copy { max-width: 560px; align-self: end; }
+  .about-copy p {
+    margin: 0 0 18px;
+    color: var(--color-muted);
+    font-size: .94rem;
+    line-height: 1.85;
+  }
+  .about-copy p:last-child { margin-bottom: 0; }
+  .about-copy .about-lead { color: var(--color-text); font-size: 1.05rem; line-height: 1.8; }
+  @media (max-width: 700px) {
+    .about-section { grid-template-columns: 1fr; gap: 24px; padding-block: 64px 70px; }
+    .about-heading h2 { font-size: clamp(2.7rem, 12vw, 3.7rem); }
+  }
+</style>
