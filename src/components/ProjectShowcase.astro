@@ -58,7 +58,7 @@ const projects = [
               <div class="spacex-orbit spacex-orbit--one"></div>
               <div class="spacex-orbit spacex-orbit--two"></div>
               <div class="spacex-brand">
-                <span class="spacex-word">SPACEX</span>
+                <span class="spacex-word">SPACE<span>X</span></span>
                 <span class="spacex-caption">MISSION CONTROL</span>
                 <span class="spacex-subcaption">FLIGHT DATA · LAUNCH SYSTEMS</span>
               </div>
@@ -214,7 +214,7 @@ const projects = [
   .spacex-art::before {
     position: absolute;
     inset: 14px;
-    border: 1px solid rgba(255, 255, 255, .09);
+    border: 1px solid rgba(255, 255, 255, .14);
     content: "";
     pointer-events: none;
   }
@@ -225,7 +225,7 @@ const projects = [
     display: flex;
     justify-content: space-between;
     gap: 12px;
-    color: rgba(235, 240, 244, .48);
+    color: rgba(255, 255, 255, .48);
     font-size: .56rem;
     letter-spacing: .17em;
   }
@@ -237,8 +237,13 @@ const projects = [
     gap: 10px;
   }
 
-  .spacex-word {
+  .spacex-word,
+  .spacex-word span {
     color: #fff;
+    -webkit-text-fill-color: #fff;
+  }
+
+  .spacex-word {
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(2.7rem, 6vw, 5.2rem);
     font-weight: 800;
@@ -255,7 +260,7 @@ const projects = [
 
   .spacex-subcaption {
     margin-top: 4px;
-    color: rgba(235, 240, 244, .46);
+    color: rgba(255, 255, 255, .46);
     font-size: .52rem;
     letter-spacing: .2em;
   }
@@ -266,7 +271,7 @@ const projects = [
     left: 50%;
     width: min(66%, 420px);
     aspect-ratio: 2.5;
-    border: 1px solid rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .14);
     border-radius: 50%;
     transform: translate(-50%, -50%) rotate(-18deg);
     pointer-events: none;
@@ -274,7 +279,7 @@ const projects = [
 
   .spacex-orbit--two {
     width: min(76%, 500px);
-    border-color: rgba(255, 255, 255, .055);
+    border-color: rgba(255, 255, 255, .07);
     transform: translate(-50%, -50%) rotate(18deg);
   }
 
@@ -404,7 +409,7 @@ const projects = [
 
   .arcana-word {
     color: #f0e9d9;
-    font-family: var(--font-display);
+    font-family: var(--font-serif);
     font-size: 1.12rem;
     font-weight: 650;
     letter-spacing: .28em;
