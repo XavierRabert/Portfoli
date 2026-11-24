@@ -40,13 +40,26 @@ const projects = [
       <article class:list={["project-card", `project-card--${project.kind}`]}>
         <div class="project-visual">
           {project.kind === "seo" ? (
-            <img
-              src="/projecte5.webp"
-              alt="Captura de la web de SEO amb Talons"
-              loading="lazy"
-              width="1200"
-              height="800"
-            />
+            <div class="seo-art" aria-label="Identitat visual de SEO amb Talons">
+              <div class="seo-art-top">
+                <span>WEB PROJECT</span>
+                <span>02 / 02</span>
+              </div>
+              <div class="seo-brand">
+                <div class="seo-mark" aria-hidden="true">
+                  <span class="seo-mark-ring"></span>
+                  <span class="seo-mark-dot"></span>
+                  <span class="seo-mark-line"></span>
+                </div>
+                <span class="seo-word">SEO <i>AMB</i> TALONS</span>
+                <span class="seo-caption">ESTRATÈGIA · VISIBILITAT · CREIXEMENT</span>
+              </div>
+              <div class="seo-art-bottom">
+                <span>ESTRATÈGIA</span>
+                <span>CONTINGUT</span>
+                <span>POSICIONAMENT</span>
+              </div>
+            </div>
           ) : (
             <div class="arcana-art" aria-label="Identitat visual del projecte Arcana">
               <div class="arcana-art-top">
@@ -179,6 +192,129 @@ const projects = [
     color: var(--color-text);
     font-size: .68rem;
     backdrop-filter: blur(8px);
+  }
+
+  .seo-art {
+    --seo-accent: #e7a0a9;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 24px 28px;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(231, 160, 169, .2), transparent 46%),
+      linear-gradient(145deg, #302226, #151315 72%);
+  }
+
+  .seo-art::before,
+  .seo-art::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(231, 160, 169, .22);
+    border-radius: 50%;
+    content: "";
+    transform: translate(-50%, -50%);
+    animation: seo-orbit 18s linear infinite;
+  }
+
+  .seo-art::after {
+    width: 280px;
+    border-color: rgba(231, 160, 169, .12);
+    animation-direction: reverse;
+    animation-duration: 26s;
+  }
+
+  .seo-art-top,
+  .seo-art-bottom {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(248, 232, 234, .55);
+    font-size: .58rem;
+    letter-spacing: .16em;
+  }
+
+  .seo-brand {
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .seo-mark {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgba(231, 160, 169, .8);
+    border-radius: 50%;
+    animation: seo-float 5s ease-in-out infinite;
+  }
+
+  .seo-mark-ring {
+    position: absolute;
+    inset: 11px;
+    border: 1px solid rgba(231, 160, 169, .65);
+    border-radius: 50%;
+  }
+
+  .seo-mark-dot {
+    position: absolute;
+    top: 14px;
+    right: 13px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f3c2c8;
+    box-shadow: 0 0 18px rgba(243, 194, 200, .7);
+  }
+
+  .seo-mark-line {
+    position: absolute;
+    right: 10px;
+    bottom: 13px;
+    width: 29px;
+    height: 1px;
+    background: #e7a0a9;
+    transform: rotate(-48deg);
+    transform-origin: right center;
+  }
+
+  .seo-word {
+    color: #f8e8ea;
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 650;
+    letter-spacing: .13em;
+  }
+
+  .seo-word i {
+    color: #e7a0a9;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .seo-caption {
+    color: #e7a0a9;
+    font-size: .55rem;
+    letter-spacing: .16em;
+    text-align: center;
+  }
+
+  @keyframes seo-orbit {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  @keyframes seo-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
   }
 
   .arcana-art {
@@ -321,12 +457,20 @@ const projects = [
     .project-grid { grid-template-columns: 1fr; gap: 14px; }
     .project-visual { height: 250px; }
     .project-description { min-height: 0; }
-    .arcana-art { padding: 20px 18px; }
+    .arcana-art,
+    .seo-art { padding: 20px 18px; }
     .arcana-brand img { width: 68px; height: 68px; }
-    .arcana-art-bottom { font-size: .5rem; }
+    .arcana-art-bottom,
+    .seo-art-bottom { font-size: .5rem; }
+    .seo-mark { width: 64px; height: 64px; }
+    .seo-word { font-size: 1rem; }
+    .seo-caption { font-size: .48rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .project-visual > img { transition: none; }
+    .seo-art::before,
+    .seo-art::after,
+    .seo-mark { animation: none; }
   }
 </style>
