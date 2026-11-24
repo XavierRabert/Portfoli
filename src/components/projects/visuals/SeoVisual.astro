@@ -1,0 +1,49 @@
+<div class="seo-art" aria-label="Logotip de SEO amb Talons">
+  <div class="art-top"><span>WEB PROFESSIONAL</span></div>
+  <div class="brand">
+    <span class="word">SEO<span>amb</span>Talons</span>
+    <span class="caption">ESTRATÈGIA · VISIBILITAT · CREIXEMENT</span>
+  </div>
+  <div class="art-bottom">
+    <span>SEO</span><span>CONTINGUT</span><span>ESTRATÈGIA DIGITAL</span>
+  </div>
+</div>
+
+<style>
+  .seo-art {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 24px 28px;
+    background: #000;
+  }
+  .art-top, .art-bottom {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(245, 240, 235, .48);
+    font-size: .58rem;
+    letter-spacing: .16em;
+  }
+  .brand { z-index: 1; display: grid; justify-items: center; gap: 14px; }
+  .word {
+    color: #f5f0eb;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: .015em;
+    white-space: nowrap;
+  }
+  .word span { color: #e8472a; }
+  .caption { color: #e8472a; font-size: .58rem; letter-spacing: .2em; text-align: center; }
+  @media (max-width: 600px) {
+    .seo-art { padding: 20px 18px; }
+    .art-bottom { font-size: .48rem; }
+    .word { font-size: clamp(1.35rem, 7vw, 2rem); }
+    .caption { font-size: .48rem; }
+  }
+</style>
