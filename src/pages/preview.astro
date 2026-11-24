@@ -1,6 +1,7 @@
 ---
 import RedesignLayout from "@/layouts/RedesignLayout.astro";
 import BrandLogo from "@/components/brand/BrandLogo.astro";
+import ProjectShowcase from "@/components/ProjectShowcase.astro";
 ---
 
 <RedesignLayout
@@ -11,7 +12,7 @@ import BrandLogo from "@/components/brand/BrandLogo.astro";
     <header class="site-header">
       <BrandLogo />
       <nav class="desktop-nav" aria-label="Navegació principal">
-        <a href="#work">Projectes</a>
+        <a href="#projects">Projectes</a>
         <a href="#about">Sobre mi</a>
         <a href="#contact">Contacte</a>
         <div class="language-switch" aria-label="Idioma">
@@ -24,7 +25,7 @@ import BrandLogo from "@/components/brand/BrandLogo.astro";
           <span></span><span></span>
         </summary>
         <nav aria-label="Navegació mòbil">
-          <a href="#work">Projectes</a>
+          <a href="#projects">Projectes</a>
           <a href="#about">Sobre mi</a>
           <a href="#contact">Contacte</a>
           <div class="language-switch">
@@ -44,7 +45,7 @@ import BrandLogo from "@/components/brand/BrandLogo.astro";
             Construeixo experiències digitals amb codi net i bon disseny.
           </p>
           <div class="hero-actions">
-            <a class="text-link hero-work-link" href="#work">
+            <a class="text-link hero-work-link" href="#projects">
               Veure projectes <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -70,9 +71,12 @@ import BrandLogo from "@/components/brand/BrandLogo.astro";
         </div>
         <p class="intro-copy">
           M'agrada entendre els problemes, trobar solucions clares i convertir-les
-          en productes digitals útils. Aquí és on anirem descobrint alguns dels meus projectes.
+          en productes digitals útils. Aquests són alguns projectes on he pogut
+          portar les idees a la pràctica.
         </p>
       </section>
+
+      <ProjectShowcase />
 
       <section id="about" class="principles" aria-label="Principis de treball">
         <article><span>01</span><h3>Bon criteri tècnic</h3><p>Arquitectura clara, codi mantenible i decisions amb sentit.</p></article>
