@@ -5,6 +5,7 @@ import ProjectShowcase from "@/components/ProjectShowcase.astro";
 import AboutSection from "@/components/redesign/AboutSection.astro";
 import ExpertiseSection from "@/components/redesign/ExpertiseSection.astro";
 import SocialLinks from "@/components/redesign/SocialLinks.astro";
+import { icons } from "@/lib/Icons";
 ---
 
 <RedesignLayout
@@ -96,6 +97,9 @@ import SocialLinks from "@/components/redesign/SocialLinks.astro";
       </div>
       <div class="footer-contact">
         <a class="footer-email" href="mailto:xrabert@gmail.com">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d={icons.gmail} />
+          </svg>
           xrabert@gmail.com <span aria-hidden="true">↗</span>
         </a>
         <SocialLinks variant="footer" />
