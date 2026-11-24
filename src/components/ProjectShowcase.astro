@@ -20,6 +20,16 @@ const projects = [
     kind: "seo",
     href: "https://www.seoambtalons.cat",
   },
+  {
+    number: "03",
+    name: "SpaceX Mission Control",
+    eyebrow: "Projecte personal · Aplicació publicada",
+    description:
+      "Un dashboard espacial desenvolupat amb Angular per explorar llançaments, coets i missions. Integració amb Launch Library 2, adaptació de dades externes, gestió d'errors i una capa de caché a Netlify per fer el servei més robust.",
+    stack: ["Angular", "TypeScript", "API REST", "Netlify Functions", "CDN Cache"],
+    kind: "spacex",
+    href: "https://landing-space-x.netlify.app/",
+  },
 ];
 ---
 
@@ -39,7 +49,17 @@ const projects = [
     {projects.map((project) => (
       <article class:list={["project-card", `project-card--${project.kind}`]}>
         <div class="project-visual">
-          {project.kind === "seo" ? (
+          {project.kind === "spacex" ? (
+            <div class="spacex-art" aria-label="SpaceX Mission Control, plataforma de seguiment de llançaments espacials">
+              <img
+                src="/images/spacex-mission-control.svg"
+                alt="Il·lustració tècnica d'un coet amb el títol Mission Control"
+                width="1200"
+                height="700"
+                loading="lazy"
+              />
+            </div>
+          ) : project.kind === "seo" ? (
             <div class="seo-art" aria-label="Logotip de SEO amb Talons">
               <div class="seo-art-top">
                 <span>WEB PROFESSIONAL</span>
@@ -140,7 +160,7 @@ const projects = [
 
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
   }
 
@@ -165,6 +185,25 @@ const projects = [
     object-fit: cover;
     object-position: top center;
     transition: transform 500ms ease;
+  }
+
+  .spacex-art {
+    width: 100%;
+    height: 100%;
+    background: #08090a;
+  }
+
+  .spacex-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 500ms ease;
+  }
+
+  .project-card--spacex:hover .spacex-art img {
+    transform: scale(1.025);
   }
 
   .project-card:hover .project-visual > img {
@@ -360,6 +399,10 @@ const projects = [
   }
 
   .project-link span { font-size: 1rem; }
+
+  @media (max-width: 1000px) {
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
 
   @media (max-width: 800px) {
     .project-heading { gap: 28px; }
