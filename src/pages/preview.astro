@@ -108,6 +108,16 @@ import { icons } from "@/lib/Icons";
   </div>
 </RedesignLayout>
 
+<script>
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  mobileMenu?.querySelectorAll("nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.removeAttribute("open");
+    });
+  });
+</script>
+
 <style>
   .hero-name-accent {
     color: var(--color-accent);
